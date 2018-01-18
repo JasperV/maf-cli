@@ -1,0 +1,42 @@
+{
+  "name": "maf-cli",
+  "version": "1.0.0",
+  "description": "MAF SDK Command Line Utility",
+  "main": "index.js",
+  "bin": {
+    "maf": "./index.js"
+  },
+  "scripts": {
+    "start": "babel-node index.js",
+    "dev": "nodemon index.js --exec babel-node",
+    "lint": "eslint ./**.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JasperV/maf-cli.git"
+  },
+  "author": "JasperV (https://git.io/jasperv)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JasperV/maf-cli/issues"
+  },
+  "homepage": "https://github.com/JasperV/maf-cli#readme",
+  "devDependencies": {
+    "babel-cli": "6.26.0",
+    "babel-preset-env": "1.6.1",
+    "eslint": "4.15.0",
+    "eslint-config-jasperv": "github:jasperv/eslint-config-jasperv",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.6.0",
+    "eslint-plugin-standard": "3.0.1",
+    "nodemon": "1.14.11"
+  },
+  "dependencies": {
+    "blessed": "0.1.81",
+    "blessed-contrib": "4.8.5",
+    "maf3-sdk": "github:metrological/maf3-sdk"
+  }
+}
