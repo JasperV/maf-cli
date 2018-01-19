@@ -2,15 +2,17 @@
   "name": "maf-cli",
   "version": "1.0.0",
   "description": "MAF SDK Command Line Utility",
-  "main": "index.js",
+  "main": "dist/cli.js",
   "bin": {
-    "maf": "./index.js"
+    "maf": "dist/cli.js"
   },
   "scripts": {
-    "start": "babel-node index.js",
-    "dev": "nodemon index.js --exec babel-node",
-    "lint": "eslint ./**.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node lib/cli.js",
+    "dev": "nodemon lib/cli.js --exec babel-node",
+    "lint": "eslint lib/**.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel lib -d dist",
+    "serve": "node dist/cli.js"
   },
   "repository": {
     "type": "git",
@@ -37,6 +39,20 @@
   "dependencies": {
     "blessed": "0.1.81",
     "blessed-contrib": "4.8.5",
+    "dotenv": "4.0.0",
     "maf3-sdk": "github:metrological/maf3-sdk"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "nodemonConfig": {
+    "watch": [
+      "./lib/**.js"
+    ]
+  },
+  "eslintConfig": {
+    "extends": "jasperv"
   }
 }

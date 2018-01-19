@@ -1,8 +1,12 @@
 work like gulp - require global install + local in project
 terminal window title
 publish current SDK without eslint - check with Wouter and Thom
+sdk log last items ... - - ???
 add ngrok to sdk as option, like maf-docs
-
+auto open in chrome tab
+monitor chrome tab for memory usage
+use compiler
+sdk use all available cores - also compiler
 
 various:
 inquirer
