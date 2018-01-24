@@ -1,12 +1,36 @@
+"start": "babel-node lib/cli.js",
+"cli": "babel-node index.js",
+"install": "babel-node lib/install.js",
+"dev": "nodemon lib/cli.js --exec babel-node",
+"lint": "eslint lib/**.js",
+"test": "npm run lint",
+"build": "babel lib -d dist && babel index.js -d dist",
+"prepublish": "pkg-ok",
+"postinstall": "dist/install.js"
+
+
+re-enable husky
+  "precommit": "npm run test",
+  "prepush": "npm run test",
+post install -> create app skeleton -> module
 work like gulp - require global install + local in project
-terminal window title
-publish current SDK without eslint - check with Wouter and Thom
-sdk log last items ... - - ???
-add ngrok to sdk as option, like maf-docs
-auto open in chrome tab
+  https://github.com/js-cli/js-liftoff
+messages on current dir not maf app/repo
+sdk winston log last items ... - - ???
+try to work around current sdk - ergo, make THIS the SDK;
+  - use only public maf.js lib
+  - create proxy module
+  - refer properly to docs and src
+https://github.com/yeoman/update-notifier
+https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a
+add ngrok to sdk as option, like maf-docs - combine with https://github.com/zeit/serve
+auto open in chrome tab - autostart app - maf autostart function
+allow hotreloading when editing code - e.g. watch files etc...
 monitor chrome tab for memory usage
 use compiler
 sdk use all available cores - also compiler
+remove keys from sdk and completely refactor it
+
 
 various:
 inquirer

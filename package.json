@@ -1,19 +1,21 @@
 {
   "name": "maf-cli",
   "version": "1.0.0",
-  "description": "MAF SDK Command Line Utility",
+  "description": "MAF SDK Command Line Interface",
   "main": "dist/cli.js",
   "bin": {
-    "maf": "dist/cli.js"
+    "maf": "./dist/index.js"
+  },
+  "engines": {
+    "node": ">=8.x"
   },
   "scripts": {
-    "start": "babel-node lib/cli.js",
-    "dev": "nodemon lib/cli.js --exec babel-node",
-    "lint": "eslint lib/**.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel lib -d dist",
-    "serve": "node dist/cli.js"
+    "test": "npm run lint",
+    "build": "babel ./index.js -d dist",
   },
+  "keywords": [
+    "TODO"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JasperV/maf-cli.git"
@@ -34,17 +36,28 @@
     "eslint-plugin-node": "5.2.1",
     "eslint-plugin-promise": "3.6.0",
     "eslint-plugin-standard": "3.0.1",
-    "nodemon": "1.14.11"
+    "nodemon": "1.14.11",
+    "husky": "0.14.3",
+    "pkg-ok": "1.1.0"
   },
   "dependencies": {
     "blessed": "0.1.81",
     "blessed-contrib": "4.8.5",
+    "copy-dir": "0.3.0",
     "dotenv": "4.0.0",
-    "maf3-sdk": "github:metrological/maf3-sdk"
+    "interpret": "1.1.0",
+    "liftoff": "2.5.0",
+    "maf-metadata": "github:jasperv/maf-metadata",
+    "maf3-sdk": "github:metrological/maf3-sdk",
+    "minimist": "1.2.0",
+    "please-upgrade-node": "3.0.1"
   },
   "babel": {
     "presets": [
       "env"
+    ],
+    "ignore": [
+      "node_modules"
     ]
   },
   "nodemonConfig": {
