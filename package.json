@@ -4,14 +4,13 @@
   "description": "MAF SDK Command Line Interface",
   "main": "dist/cli.js",
   "bin": {
-    "maf": "./dist/index.js"
+    "maf": "./dist/bin/cli.js"
   },
   "engines": {
     "node": ">=8.x"
   },
   "scripts": {
-    "test": "npm run lint",
-    "build": "babel ./index.js -d dist",
+    "build": "babel ./bin -d dist/bin"
   },
   "keywords": [
     "TODO"
