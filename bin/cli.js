@@ -55,6 +55,8 @@ function start( env ) {
     console.log( `No ${this.configName} found.` )
   }
 
+  // TODO: test for metadata.json
+
   runSDK( env )
 }
 
@@ -62,30 +64,29 @@ async function runSDK( env ) {
   console.log( env.configPath )
 
   const mae = {
-      ui: 'com.metrological.ui.Demo'
-    , language: 'en'
-    , poster: true
-    , categories: [
-        'favorites'
-      , 'recently'
-      , 'video'
-      , 'news'
-      , 'social'
-      , 'games'
-      , 'sport'
-      , 'lifestyle'
-      ]
-    , apps: []
-    }
+    ui: 'com.metrological.ui.Demo'
+  , language: 'en'
+  , categories: [
+      'favorites'
+    , 'recently'
+    , 'video'
+    , 'news'
+    , 'social'
+    , 'games'
+    , 'sport'
+    , 'lifestyle'
+    ]
+  , apps: []
+  }
 
-  const sdkHTML = '../node_modules/maf3-sdk/index.html'
+  const html = '../node_modules/maf3-sdk/index.html'
   const metadataPath = `${env.configBase}/metadata.json`
   const metadata = require( metadataPath )
   const config = require( env.configPath )
   const sdkApps = await dirs( path.resolve( __dirname, `../node_modules/maf3-sdk/apps/` ) )
 
   fs.createReadStream( path.resolve( __dirname, `../lib/index.html` ) )
-    .pipe( fs.createWriteStream( path.resolve( __dirname, sdkHTML ) ) )
+    .pipe( fs.createWriteStream( path.resolve( __dirname, html ) ) )
 
   console.log( sdkApps )
   console.log( config )
@@ -93,7 +94,7 @@ async function runSDK( env ) {
   console.log( metadata )
 
   // merge configs
-  // replace config in html
+  // replace config in html - {{MAE}}
 
   fork( require.resolve( `maf3-sdk` ), [], { cwd: process.cwd() } )
 }
