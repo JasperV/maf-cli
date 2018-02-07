@@ -1,6 +1,4 @@
 node_modules
-dist
-# /Contents
 
 *.tmp
 *.DS_Store

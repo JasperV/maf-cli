@@ -9,14 +9,24 @@
 "postinstall": "dist/install.js"
 
 
-re-enable husky
-  "precommit": "npm run test",
-  "prepush": "npm run test",
+"blessed": "0.1.81",
+    "blessed-contrib": "4.8.5",
+    "copy-dir": "0.3.0",
+    "dotenv": "4.0.0",
+    "interpret": "1.1.0",
+    "liftoff": "2.5.0",
+    "maf-metadata": "github:jasperv/maf-metadata",
+    "maf3-sdk": "github:metrological/maf3-sdk",
+    "minimist": "1.2.0",
+    "please-upgrade-node": "3.0.1"
+
+
 post install -> create app skeleton -> module
 work like gulp - require global install + local in project
   https://github.com/js-cli/js-liftoff
 messages on current dir not maf app/repo
 sdk winston log last items ... - - ???
+fancy pants output on terminal
 try to work around current sdk - ergo, make THIS the SDK;
   - use only public maf.js lib
   - create proxy module
@@ -27,6 +37,8 @@ add ngrok to sdk as option, like maf-docs - combine with https://github.com/zeit
 auto open in chrome tab - autostart app - maf autostart function
 allow hotreloading when editing code - e.g. watch files etc...
 monitor chrome tab for memory usage
+.sh install from internet
+eslint-plugin-unicorn
 use compiler
 sdk use all available cores - also compiler
 remove keys from sdk and completely refactor it

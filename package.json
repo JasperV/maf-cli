@@ -2,15 +2,19 @@
   "name": "maf-cli",
   "version": "1.0.0",
   "description": "MAF SDK Command Line Interface",
-  "main": "dist/cli.js",
+  "main": "index.js",
   "bin": {
-    "maf": "./dist/bin/cli.js"
+    "maf": "bin/cli.js"
   },
   "engines": {
     "node": ">=8.x"
   },
   "scripts": {
-    "build": "babel ./bin -d dist/bin"
+    "start": "index.js",
+    "dev": "nodemon index.js",
+    "test": "eslint *.js",
+    "precommit": "npm run test",
+    "prepush": "npm run test"
   },
   "keywords": [
     "TODO"
@@ -26,8 +30,6 @@
   },
   "homepage": "https://github.com/JasperV/maf-cli#readme",
   "devDependencies": {
-    "babel-cli": "6.26.0",
-    "babel-preset-env": "1.6.1",
     "eslint": "4.15.0",
     "eslint-config-jasperv": "github:jasperv/eslint-config-jasperv",
     "eslint-config-standard": "10.2.1",
@@ -40,28 +42,14 @@
     "pkg-ok": "1.1.0"
   },
   "dependencies": {
-    "blessed": "0.1.81",
-    "blessed-contrib": "4.8.5",
-    "copy-dir": "0.3.0",
     "dotenv": "4.0.0",
-    "interpret": "1.1.0",
     "liftoff": "2.5.0",
-    "maf-metadata": "github:jasperv/maf-metadata",
     "maf3-sdk": "github:metrological/maf3-sdk",
-    "minimist": "1.2.0",
     "please-upgrade-node": "3.0.1"
-  },
-  "babel": {
-    "presets": [
-      "env"
-    ],
-    "ignore": [
-      "node_modules"
-    ]
   },
   "nodemonConfig": {
     "watch": [
-      "./lib/**.js"
+      "./bin/**.js", "./lib/**.js"
     ]
   },
   "eslintConfig": {
