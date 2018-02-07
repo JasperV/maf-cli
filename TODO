@@ -1,29 +1,7 @@
-"start": "babel-node lib/cli.js",
-"cli": "babel-node index.js",
-"install": "babel-node lib/install.js",
-"dev": "nodemon lib/cli.js --exec babel-node",
-"lint": "eslint lib/**.js",
-"test": "npm run lint",
-"build": "babel lib -d dist && babel index.js -d dist",
-"prepublish": "pkg-ok",
-"postinstall": "dist/install.js"
-
-
-"blessed": "0.1.81",
-    "blessed-contrib": "4.8.5",
-    "copy-dir": "0.3.0",
-    "dotenv": "4.0.0",
-    "interpret": "1.1.0",
-    "liftoff": "2.5.0",
-    "maf-metadata": "github:jasperv/maf-metadata",
-    "maf3-sdk": "github:metrological/maf3-sdk",
-    "minimist": "1.2.0",
-    "please-upgrade-node": "3.0.1"
-
-
-post install -> create app skeleton -> module
-work like gulp - require global install + local in project
-  https://github.com/js-cli/js-liftoff
+cli completions for; publish, release, upload, package, init(editorconfig, skeleton, pipeline?, gitignore, .mafrc.json)
+travis, appveyor
+copy gulp behaviour
+eslint
 messages on current dir not maf app/repo
 sdk winston log last items ... - - ???
 fancy pants output on terminal
