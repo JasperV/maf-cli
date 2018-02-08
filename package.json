@@ -30,9 +30,13 @@
     "pkg-ok": "1.1.0"
   },
   "dependencies": {
+    "inquirer": "5.1.0",
     "liftoff": "2.5.0",
     "maf3-sdk": "github:metrological/maf3-sdk",
     "minimist": "1.2.0",
+    "mkdirp": "0.5.1",
+    "node-fetch": "2.0.0",
+    "parse-author": "2.0.0",
     "please-upgrade-node": "3.0.1"
   }
 }

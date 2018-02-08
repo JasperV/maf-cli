@@ -1,4 +1,8 @@
-cli completions for; publish, release, upload, package, init(editorconfig, skeleton, pipeline?, gitignore, .mafrc.json)
+cli completions for;
+  publish,
+  upload+release,
+  package,
+ML specific init - for default config --metro???
 travis, appveyor
 copy gulp behaviour
 eslint
@@ -23,6 +27,7 @@ remove keys from sdk and completely refactor it
 
 
 various:
+args
 inquirer
 command
 blessed
