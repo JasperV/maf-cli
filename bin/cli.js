@@ -15,13 +15,13 @@ const { fork } = require( 'child_process' )
 const { createInterface } = require( 'readline' )
 
 require( 'please-upgrade-node' )( require( '../package.json' ) )
+require( 'dotenv' ).config()
 
 const fileType = `utf8`
 const SIGINT = `SIGINT`
 
-process.env.INIT_CWD = process.cwd()
-
 // TODO: all path resolve or similar
+// TODO: modularize
 
 const {
   readFile
@@ -72,6 +72,8 @@ function start( env ) {
     initApp( env )
   else if ( tasks.includes( `package` ) )
     packageApp( env )
+  else if ( tasks.includes( `upload` ) )
+    uploadApp( env )
   else
     runSDK( env )
 }
@@ -148,12 +150,53 @@ async function initApp( env ) {
 }
 
 function packageApp( env ) {
+  // TODO: if exists, delete or overwrite
+
   const identifier = env.configBase.split( `/` ).pop()
   const archive = archiver( `zip`, { zlib: { level: 9 } } )
 
   archive.directory( `./Contents`, `${identifier}/Contents`, false )
   archive.pipe( fs.createWriteStream( `${identifier}.zip` ) )
   archive.finalize()
+}
+
+async function uploadApp( env ) {
+  console.log( `upload`, env.configBase )
+  console.log( process.env.METROLOGICAL_API_KEY )
+  console.log(  )
+
+  const identifier = env.configBase.split( `/` ).pop()
+  const stats = await stat( `./${identifier}.zip` )
+  const size = stats.size
+
+  // const res = await fetch( `https://api.metrological.com/api/admin/applications/upload`, {
+  //   method: `POST`
+  // , headers: {
+  //     'x-api-token': process.env.METROLOGICAL_API_KEY
+  //   , 'content-length': size
+  //   }
+  // , body: fs.createReadStream( `./${identifier}.zip` )
+  // } )
+
+  // console.log( await res.json() )
+
+/*
+------WebKitFormBoundarys5Dg38BLoNBiFOCe
+Content-Disposition: form-data; name="file"; filename="com.metrological.app.jasper.zip"
+Content-Type: application/zip
+
+
+------WebKitFormBoundarys5Dg38BLoNBiFOCe--
+*/
+
+
+/* release
+curl "https://api.metrological.com/api/admin/applications/release" \
+    -H "X-API-Token: 8605068c9545f6a25e64b634000bea6023a140850ffe561e8417614d6150eca3" \
+    -H "Content-Type: application/json;charset=UTF-8" \
+    --data-binary "{\"appIds\":\"$1\",\"skipImageCompression\":false}"
+*/
+
 }
 
 async function runSDK( env ) {

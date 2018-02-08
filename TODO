@@ -1,7 +1,7 @@
 cli completions for;
   publish,
-  upload+release,
-  package,
+  release,
+  upload
 remove debug log
 ML specific init - for default config --metro???
 travis, appveyor

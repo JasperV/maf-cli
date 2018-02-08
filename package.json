@@ -31,6 +31,7 @@
   },
   "dependencies": {
     "archiver": "2.1.1",
+    "dotenv": "5.0.0",
     "inquirer": "5.1.0",
     "liftoff": "2.5.0",
     "maf3-sdk": "github:metrological/maf3-sdk",
