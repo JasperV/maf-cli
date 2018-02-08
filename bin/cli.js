@@ -29,6 +29,7 @@ const {
 , readdir
 , stat
 , mkdir
+, symlink
 } = {
   readFile: promisify( fs.readFile )
 , writeFile: promisify( fs.writeFile )
@@ -36,6 +37,7 @@ const {
 , readdir: promisify( fs.readdir )
 , stat: promisify( fs.stat )
 , mkdir: promisify( mkdirp )
+, symlink: promisify( fs.symlink )
 }
 
 const cli = new Liftoff( {
@@ -162,7 +164,7 @@ async function runSDK( env ) {
   let metadata
 
   try {
-    metadata = require( `${env.configBase}/metadata.json` )
+    metadata = require( `${env.configBase}/Contents/metadata.json` )
   } catch( e ) {
     if ( e.code === `MODULE_NOT_FOUND` ) {
       console.log( `metadata.json not found in: ${env.cwd}` )
@@ -190,6 +192,12 @@ async function runSDK( env ) {
   , /{{MAE}}/gi
   , `var MAE = ${JSON.stringify( merged, null, 2 )}`
   )
+
+  try {
+    await symlink( env.configBase, path.resolve( __dirname, `../node_modules/maf3-sdk/apps/${metadata.identifier}` ), `dir` )
+  } catch( e ) {
+    if ( e.code !== `EEXIST` ) throw e
+  }
 
   fork( require.resolve( `maf3-sdk` ), [], { cwd: process.cwd() } )
 }
