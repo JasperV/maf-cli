@@ -5,6 +5,7 @@ const Liftoff = require( 'liftoff' )
 const fetch = require( 'node-fetch' )
 const mkdirp = require( 'mkdirp' )
 const inquirer = require( 'inquirer' )
+const archiver = require( 'archiver' )
 const parseAuthor = require( 'parse-author' )
 const argv = require( 'minimist' )( process.argv.slice( 2 ) )
 const fs = require( 'fs' )
@@ -69,6 +70,8 @@ function start( env ) {
 
   if ( tasks.includes( `init` ) )
     initApp( env )
+  else if ( tasks.includes( `package` ) )
+    packageApp( env )
   else
     runSDK( env )
 }
@@ -142,6 +145,15 @@ async function initApp( env ) {
   }
 
   process.exit( 0 )
+}
+
+function packageApp( env ) {
+  const identifier = env.configBase.split( `/` ).pop()
+  const archive = archiver( `zip`, { zlib: { level: 9 } } )
+
+  archive.directory( `./Contents`, `${identifier}/Contents`, false )
+  archive.pipe( fs.createWriteStream( `${identifier}.zip` ) )
+  archive.finalize()
 }
 
 async function runSDK( env ) {
