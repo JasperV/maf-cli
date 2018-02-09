@@ -1,14 +1,14 @@
 # maf-cli
 
-# TODO: put in maf.sh for curl command
+## TODO: put in maf.sh for curl command
 npm i -g maf-cli
 npm i -d maf-cli
-npm init && maf init
+git init && npm init && maf init
 
-# FOR publish use .env
+## FOR publish use .env
 METROLOGICAL_API_KEY="KEY_HERE"
 
-# MAF key combinations:
+## MAF key combinations:
 RC - Stop       = Shift + Down.
 RC - Play/Pause = Shift + Up.
 RC - Rewind     = Shift + Left.

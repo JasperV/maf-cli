@@ -190,25 +190,30 @@ async function uploadApp( env ) {
     )
 }
 
-function releaseApp( env ) {
+async function releaseApp( env ) {
+    const identifier = env.configBase.split( `/` ).pop()
 
-  /* release
+    const res = await fetch( `https://api.metrological.com/api/admin/applications/release`, {
+      method: `POST`
+    , headers: {
+        'x-api-token': process.env.METROLOGICAL_API_KEY
+      , 'content-type': `application/json;charset=utf-8`
+      }
+    , body: `{"appIds":"${identifier}","skipImageCompression":false}`
+    } )
 
-  // const res = await fetch( `https://api.metrological.com/api/admin/applications/upload`, {
-    //   method: `POST`
-    // , headers: { 'x-api-token': process.env.METROLOGICAL_API_KEY }
-    // , body: form
-    // } )
+    const messages = await res.json()
 
-  curl "https://api.metrological.com/api/admin/applications/release" \
-      -H "X-API-Token: 8605068c9545f6a25e64b634000bea6023a140850ffe561e8417614d6150eca3" \
-      -H "Content-Type: application/json;charset=UTF-8" \
-      --data-binary "{\"appIds\":\"$1\",\"skipImageCompression\":false}"
-  */
-
+    if ( messages.length )
+      messages.forEach( message => console.log(
+        `${message.id} ${message.error}`
+      ) )
 }
 
 function publishApp( env ) {
+
+  // TODO: if one fails do not do the others
+
   packageApp( env )
   uploadApp( env )
   releaseApp( env )

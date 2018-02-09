@@ -5,6 +5,7 @@ remove debug log
 // TODO: modularize - also plugins for ML specific
 ML specific init - for default config --metro???
 travis, appveyor
+auto update version from package.json
 copy gulp behaviour
 eslint
 messages on current dir not maf app/repo
