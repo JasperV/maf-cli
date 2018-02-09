@@ -323,3 +323,5 @@ if ( process.platform === `win32` ) {
   , output: process.stdout
   } ).on( SIGINT, _ => process.emit( SIGINT ) )
 }
+
+module.exports = require( '../package.json' )
