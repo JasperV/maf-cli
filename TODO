@@ -1,8 +1,8 @@
 cli completions for;
   publish,
   release,
-  upload
 remove debug log
+// TODO: modularize - also plugins for ML specific
 ML specific init - for default config --metro???
 travis, appveyor
 copy gulp behaviour

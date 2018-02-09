@@ -11,7 +11,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "prepare": "pkg-ok"
+    "prepare": "pkg-ok",
+    "postinstall": "node lib/install.js"
   },
   "keywords": [
     "TODO"
@@ -32,6 +33,7 @@
   "dependencies": {
     "archiver": "2.1.1",
     "dotenv": "5.0.0",
+    "form-data": "2.3.1",
     "inquirer": "5.1.0",
     "liftoff": "2.5.0",
     "maf3-sdk": "github:metrological/maf3-sdk",

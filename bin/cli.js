@@ -6,6 +6,7 @@ const fetch = require( 'node-fetch' )
 const mkdirp = require( 'mkdirp' )
 const inquirer = require( 'inquirer' )
 const archiver = require( 'archiver' )
+const FormData = require( 'form-data' )
 const parseAuthor = require( 'parse-author' )
 const argv = require( 'minimist' )( process.argv.slice( 2 ) )
 const fs = require( 'fs' )
@@ -21,7 +22,6 @@ const fileType = `utf8`
 const SIGINT = `SIGINT`
 
 // TODO: all path resolve or similar
-// TODO: modularize
 
 const {
   readFile
@@ -74,6 +74,10 @@ function start( env ) {
     packageApp( env )
   else if ( tasks.includes( `upload` ) )
     uploadApp( env )
+  else if ( tasks.includes( `release` ) )
+    releaseApp( env )
+  else if ( tasks.includes( `publish` ) )
+    publishApp( env )
   else
     runSDK( env )
 }
@@ -150,53 +154,64 @@ async function initApp( env ) {
 }
 
 function packageApp( env ) {
-  // TODO: if exists, delete or overwrite
-
   const identifier = env.configBase.split( `/` ).pop()
   const archive = archiver( `zip`, { zlib: { level: 9 } } )
 
-  archive.directory( `./Contents`, `${identifier}/Contents`, false )
+  archive.append( null, { name: `${identifier}/` } )
+  archive.append( null, { name: `${identifier}/Contents/` } )
+  archive.directory( `./Contents`, `${identifier}/Contents/` )
   archive.pipe( fs.createWriteStream( `${identifier}.zip` ) )
   archive.finalize()
 }
 
 async function uploadApp( env ) {
-  console.log( `upload`, env.configBase )
-  console.log( process.env.METROLOGICAL_API_KEY )
-  console.log(  )
-
   const identifier = env.configBase.split( `/` ).pop()
-  const stats = await stat( `./${identifier}.zip` )
-  const size = stats.size
+  const form = new FormData()
+  const translationFile = path.resolve( __dirname, `../lib/translation.json` )
+  const translations = require( translationFile )
+
+  form.append( `file`, fs.createReadStream( `./${identifier}.zip` ) )
+
+  const res = await fetch( `https://api.metrological.com/api/admin/applications/upload`, {
+    method: `POST`
+  , headers: { 'x-api-token': process.env.METROLOGICAL_API_KEY }
+  , body: form
+  } )
+
+  const message = await res.json()
+
+  if ( message.errors )
+    message.errors.forEach( error => console.error(
+      `Error: ${translations.error.upload.submit_errors[ error ]}`
+    ) )
+  else if ( message.success )
+    console.log(
+      `Success: ${translations.success.upload.success}`
+    )
+}
+
+function releaseApp( env ) {
+
+  /* release
 
   // const res = await fetch( `https://api.metrological.com/api/admin/applications/upload`, {
-  //   method: `POST`
-  // , headers: {
-  //     'x-api-token': process.env.METROLOGICAL_API_KEY
-  //   , 'content-length': size
-  //   }
-  // , body: fs.createReadStream( `./${identifier}.zip` )
-  // } )
+    //   method: `POST`
+    // , headers: { 'x-api-token': process.env.METROLOGICAL_API_KEY }
+    // , body: form
+    // } )
 
-  // console.log( await res.json() )
+  curl "https://api.metrological.com/api/admin/applications/release" \
+      -H "X-API-Token: 8605068c9545f6a25e64b634000bea6023a140850ffe561e8417614d6150eca3" \
+      -H "Content-Type: application/json;charset=UTF-8" \
+      --data-binary "{\"appIds\":\"$1\",\"skipImageCompression\":false}"
+  */
 
-/*
-------WebKitFormBoundarys5Dg38BLoNBiFOCe
-Content-Disposition: form-data; name="file"; filename="com.metrological.app.jasper.zip"
-Content-Type: application/zip
+}
 
-
-------WebKitFormBoundarys5Dg38BLoNBiFOCe--
-*/
-
-
-/* release
-curl "https://api.metrological.com/api/admin/applications/release" \
-    -H "X-API-Token: 8605068c9545f6a25e64b634000bea6023a140850ffe561e8417614d6150eca3" \
-    -H "Content-Type: application/json;charset=UTF-8" \
-    --data-binary "{\"appIds\":\"$1\",\"skipImageCompression\":false}"
-*/
-
+function publishApp( env ) {
+  packageApp( env )
+  uploadApp( env )
+  releaseApp( env )
 }
 
 async function runSDK( env ) {
