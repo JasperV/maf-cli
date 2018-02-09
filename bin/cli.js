@@ -3,6 +3,7 @@
 // const log = require( '../lib/log' )
 const Liftoff = require( 'liftoff' )
 const fetch = require( 'node-fetch' )
+const retry = require( 'async-retry' )
 const mkdirp = require( 'mkdirp' )
 const inquirer = require( 'inquirer' )
 const archiver = require( 'archiver' )
@@ -20,8 +21,6 @@ require( 'dotenv' ).config()
 
 const fileType = `utf8`
 const SIGINT = `SIGINT`
-
-// TODO: all path resolve or similar
 
 const {
   readFile
@@ -153,17 +152,21 @@ async function initApp( env ) {
   process.exit( 0 )
 }
 
-function packageApp( env ) {
+function packageApp( env, cb ) {
   const identifier = env.configBase.split( `/` ).pop()
+  const zipFile = fs.createWriteStream( `${identifier}.zip` )
   const archive = archiver( `zip`, { zlib: { level: 9 } } )
 
   archive.on( `error`, err => { throw err } )
+  zipFile.on( 'close', function() { if ( cb ) cb( env ) } )
 
   archive.append( null, { name: `${identifier}/` } )
   archive.append( null, { name: `${identifier}/Contents/` } )
   archive.directory( `./Contents`, `${identifier}/Contents/` )
-  archive.pipe( fs.createWriteStream( `${identifier}.zip` ) )
+  archive.pipe( zipFile )
   archive.finalize()
+
+  return true
 }
 
 async function uploadApp( env ) {
@@ -186,48 +189,82 @@ async function uploadApp( env ) {
     message.errors.forEach( error => console.error(
       `Error: ${translations.error.upload.submit_errors[ error ]}`
     ) )
-    throw new Error
-  } else if ( message.success )
+    return false
+  } else if ( message.success ) {
+
+    const metadata = require( `${env.configBase}/Contents/metadata.json` )
+
+    const status = await retry( async ( bail, attempt ) => {
+
+      const res = await fetch( `https://api.metrological.com/api/admin/applications/upload-status`, {
+        method: 'GET'
+      , headers: { 'x-api-token': process.env.METROLOGICAL_API_KEY }
+      } )
+
+      if ( 403 === res.status ) {
+        return bail( new Error( 'Unauthorized' ) )
+      }
+
+      const data = await res.json()
+
+      const item = data.find( item =>
+        item.params.identifier === identifier &&
+        item.params.version === metadata.version &&
+        item.status !== 'pending'
+      )
+
+      if ( !item ) throw new Error( 'Item still pending' )
+
+      return item
+    }, {
+      randomize: true
+    , minTimeout: 2000
+    } )
+
     console.log(
-      `Success: ${translations.success.upload.success}`
+      status.status
+    , status.errors ? status.errors : translations.success.upload.success
     )
+  }
+
+  return true
 }
 
 async function releaseApp( env ) {
-    const identifier = env.configBase.split( `/` ).pop()
+  const identifier = env.configBase.split( `/` ).pop()
 
-    const res = await fetch( `https://api.metrological.com/api/admin/applications/release`, {
-      method: `POST`
-    , headers: {
-        'x-api-token': process.env.METROLOGICAL_API_KEY
-      , 'content-type': `application/json;charset=utf-8`
-      }
-    , body: `{"appIds":"${identifier}","skipImageCompression":false}`
+  const res = await fetch( `https://api.metrological.com/api/admin/applications/release`, {
+    method: `POST`
+  , headers: {
+      'x-api-token': process.env.METROLOGICAL_API_KEY
+    , 'content-type': `application/json;charset=utf-8`
+    }
+  , body: `{"appIds":"${identifier}","skipImageCompression":false}`
+  } )
+
+  const messages = await res.json()
+
+  let error = false
+
+  if ( messages.length )
+    messages.forEach( message => {
+      console.log( `${message.id} ${message.error}` )
+      if ( message.error )
+        error = true
     } )
 
-    const messages = await res.json()
+  if ( error ) return false
 
-    let error = false
-
-    if ( messages.length )
-      messages.forEach( message => {
-        console.log( `${message.id} ${message.error}` )
-        if ( message.error )
-          error = true
-      } )
-
-    if ( error ) throw new Error
+  return true
 }
 
-async function publishApp( env ) {
-  try {
-    packageApp( env )
-    await uploadApp( env )
-    await releaseApp( env )
-  } catch( e ) {
-    console.error( e )
-    process.exit( 1 )
-  }
+function publishApp( env ) {
+  packageApp( env, async function( env ) {
+    const upload = await uploadApp( env )
+    if ( upload ) {
+      await releaseApp( env )
+    }
+  } )
 }
 
 async function runSDK( env ) {
