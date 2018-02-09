@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const log = require( '../lib/log' )
+// const log = require( '../lib/log' )
 const Liftoff = require( 'liftoff' )
 const fetch = require( 'node-fetch' )
 const mkdirp = require( 'mkdirp' )
@@ -157,6 +157,8 @@ function packageApp( env ) {
   const identifier = env.configBase.split( `/` ).pop()
   const archive = archiver( `zip`, { zlib: { level: 9 } } )
 
+  archive.on( `error`, err => { throw err } )
+
   archive.append( null, { name: `${identifier}/` } )
   archive.append( null, { name: `${identifier}/Contents/` } )
   archive.directory( `./Contents`, `${identifier}/Contents/` )
@@ -180,11 +182,12 @@ async function uploadApp( env ) {
 
   const message = await res.json()
 
-  if ( message.errors )
+  if ( message.errors ) {
     message.errors.forEach( error => console.error(
       `Error: ${translations.error.upload.submit_errors[ error ]}`
     ) )
-  else if ( message.success )
+    throw new Error
+  } else if ( message.success )
     console.log(
       `Success: ${translations.success.upload.success}`
     )
@@ -204,19 +207,27 @@ async function releaseApp( env ) {
 
     const messages = await res.json()
 
+    let error = false
+
     if ( messages.length )
-      messages.forEach( message => console.log(
-        `${message.id} ${message.error}`
-      ) )
+      messages.forEach( message => {
+        console.log( `${message.id} ${message.error}` )
+        if ( message.error )
+          error = true
+      } )
+
+    if ( error ) throw new Error
 }
 
-function publishApp( env ) {
-
-  // TODO: if one fails do not do the others
-
-  packageApp( env )
-  uploadApp( env )
-  releaseApp( env )
+async function publishApp( env ) {
+  try {
+    packageApp( env )
+    await uploadApp( env )
+    await releaseApp( env )
+  } catch( e ) {
+    console.error( e )
+    process.exit( 1 )
+  }
 }
 
 async function runSDK( env ) {
