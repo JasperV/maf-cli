@@ -4,7 +4,7 @@
 git init
 npm init
 npm i -g maf-cli
-npm i -d maf-cli
+npm i -D maf-cli
 echo "{}" > .mafrc.json
 maf init
 
