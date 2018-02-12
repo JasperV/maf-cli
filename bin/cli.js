@@ -169,6 +169,11 @@ function packageApp( env, cb ) {
 }
 
 async function uploadApp( env ) {
+  if ( !process.env.METROLOGICAL_API_KEY ) {
+    console.log( 'Uploading requires a Metrological API Key. Get yours at dashboard.metrological.com.' )
+    process.exit(1)
+  }
+
   const identifier = env.configBase.split( `/` ).pop()
   const form = new FormData()
   const translationFile = path.resolve( __dirname, `../lib/translation.json` )
@@ -230,6 +235,11 @@ async function uploadApp( env ) {
 }
 
 async function releaseApp( env ) {
+  if ( !process.env.METROLOGICAL_API_KEY ) {
+    console.log( 'Releasing requires a Metrological API Key. Get yours at dashboard.metrological.com.' )
+    process.exit(1)
+  }
+
   const identifier = env.configBase.split( `/` ).pop()
 
   const res = await fetch( `https://api.metrological.com/api/admin/applications/release`, {
