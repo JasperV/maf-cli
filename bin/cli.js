@@ -40,12 +40,24 @@ const {
 }
 
 const cli = new Liftoff( {
-  processTitle: `MAF SDK CLI`
+  name: 'maf'
+, processTitle: `MAF SDK CLI`
 , moduleName: `maf-cli`
 , configName: `.mafrc`
+, extensions: {
+    '.json': null
+  }
+, configFiles: {
+    '.mafrc.json': {
+      up: {
+        path: '.',
+        findUp: true
+      }
+    }
+  }
 } )
 
-cli.launch( { cwd: argv.cwd }, start )
+cli.launch( {}, start )
 
 function start( env ) {
   if ( process.cwd() !== env.cwd ) {
@@ -62,6 +74,7 @@ function start( env ) {
     require( env.configPath )
   } else {
     console.log( `No ${this.configName} found.` )
+    process.exit( 1 )
   }
 
   const tasks = argv._

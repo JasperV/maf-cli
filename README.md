@@ -1,9 +1,12 @@
 # maf-cli
 
 ## TODO: put in maf.sh for curl command
+git init
+npm init
 npm i -g maf-cli
 npm i -d maf-cli
-git init && npm init && maf init
+echo "{}" > .mafrc.json
+maf init
 
 ## FOR publish use .env
 METROLOGICAL_API_KEY="KEY_HERE"
