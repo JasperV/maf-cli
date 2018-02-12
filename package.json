@@ -41,7 +41,6 @@
     "minimist": "1.2.0",
     "mkdirp": "0.5.1",
     "node-fetch": "2.0.0",
-    "parse-author": "2.0.0",
-    "please-upgrade-node": "3.0.1"
+    "parse-author": "2.0.0"
   }
 }

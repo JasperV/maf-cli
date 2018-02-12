@@ -10,6 +10,7 @@ copy gulp behaviour
 eslint
 messages on current dir not maf app/repo
 sdk winston log last items ... - - ???
+use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
 fancy pants output on terminal
 try to work around current sdk - ergo, make THIS the SDK;
   - use only public maf.js lib

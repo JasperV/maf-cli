@@ -16,7 +16,6 @@ const { promisify } = require( 'util' )
 const { fork } = require( 'child_process' )
 const { createInterface } = require( 'readline' )
 
-require( 'please-upgrade-node' )( require( '../package.json' ) )
 require( 'dotenv' ).config()
 
 const fileType = `utf8`
