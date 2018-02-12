@@ -1,6 +1,6 @@
 {
   "name": "maf-cli",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "MAF SDK Command Line Interface",
   "main": "index.js",
   "bin": {
@@ -37,7 +37,7 @@
     "form-data": "2.3.1",
     "inquirer": "5.1.0",
     "liftoff": "2.5.0",
-    "maf3-sdk": "github:metrological/maf3-sdk",
+    "maf3-sdk": "1.0.0",
     "minimist": "1.2.0",
     "mkdirp": "0.5.1",
     "node-fetch": "2.0.0",

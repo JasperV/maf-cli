@@ -2,6 +2,8 @@ cli completions for;
   publish,
   release,
 remove debug log
+fix readme
+add nodei and others
 // TODO: modularize - also plugins for ML specific
 ML specific init - for default config --metro???
 travis, appveyor
