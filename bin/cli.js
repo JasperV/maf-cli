@@ -77,6 +77,15 @@ function start( env ) {
     process.exit( 1 )
   }
 
+  try {
+    const sdk = require( `${env.configBase}/node_modules/maf3-sdk/package.json` )
+  } catch( e ) {
+    if ( e.code === `MODULE_NOT_FOUND` ) {
+      console.log( `MAF3 SDK not found.` )
+      process.exit( 1 )
+    } else throw e
+  }
+
   const tasks = argv._
 
   if ( tasks.includes( `init` ) )
@@ -95,7 +104,6 @@ function start( env ) {
 
 async function initApp( env ) {
   const files = {}
-
   const res = await fetch( `https://jsonip.metrological.com/?maf=true` )
   const ipData = await res.json()
   const language = ipData.geo.country.toLowerCase()
@@ -114,7 +122,7 @@ async function initApp( env ) {
   , { name: 'categories', message: `App Categories:`, filter: answer => answer.split( /\W+/ ) }
   ] )
 
-  files[ `Contents/metadata.json` ] = JSON.stringify(
+  files[ `contents/metadata.json` ] = JSON.stringify(
     {
       identifier: env.configBase.split( `/` ).pop()
     , name: answers.name
@@ -124,34 +132,34 @@ async function initApp( env ) {
     , copyright: answers.company
     , description: answers.description
     , categories: answers.categories
-    , scripts: `JavaScript/init.js`
-    , images: { icon: { '192x192': `Images/icon.png` } }
+    , scripts: `javascript/init.js`
+    , images: { icon: { '192x192': `images/icon.png` } }
     }
   , null
   , 2
   )
 
-  const contents = `${env.configBase}/Contents`
+  const contents = `${env.configBase}/contents`
 
   await mkdir( contents )
-  await mkdir( `${contents}/Fonts` )
-  await mkdir( `${contents}/Images` )
+  await mkdir( `${contents}/fonts` )
+  await mkdir( `${contents}/images` )
 
   fs.createReadStream( path.resolve( __dirname, `../lib/icon.png` ) )
-    .pipe( fs.createWriteStream( `${contents}/Images/icon.png` ) )
+    .pipe( fs.createWriteStream( `${contents}/images/icon.png` ) )
   fs.createReadStream( path.resolve( __dirname, `../lib/icon.psd` ) )
-    .pipe( fs.createWriteStream( `${contents}/Images/icon.psd` ) )
+    .pipe( fs.createWriteStream( `${contents}/images/icon.psd` ) )
 
-  await mkdir( `${contents}/Localization` )
-  await writeFile( `${contents}/Localization/en-EU.strings`, `// EN`, fileType )
-  await writeFile( `${contents}/Localization/${language}-EU.strings`, `// ${language.toUpperCase()}`, fileType )
-  await mkdir( `${contents}/JavaScript` )
-  await writeFile( `${contents}/JavaScript/init.js`, `// init`, fileType )
-  await writeFile( `${contents}/JavaScript/theme.js`, `// theme`, fileType )
-  await mkdir( `${contents}/JavaScript/Views` )
-  await mkdir( `${contents}/JavaScript/Core` )
-  await mkdir( `${contents}/JavaScript/Core` )
-  await writeFile( `${contents}/JavaScript/Core/api.js`, `// api`, fileType )
+  await mkdir( `${contents}/localization` )
+  await writeFile( `${contents}/localization/en-eu.strings`, `// EN`, fileType )
+  await writeFile( `${contents}/localization/${language}-eu.strings`, `// ${language.toUpperCase()}`, fileType )
+  await mkdir( `${contents}/javascript` )
+  await writeFile( `${contents}/javascript/init.js`, `// init`, fileType )
+  await writeFile( `${contents}/javascript/theme.js`, `// theme`, fileType )
+  await mkdir( `${contents}/javascript/views` )
+  await mkdir( `${contents}/javascript/core` )
+  await mkdir( `${contents}/javascript/core` )
+  await writeFile( `${contents}/javascript/core/api.js`, `// api`, fileType )
 
   for ( file in files ) {
     await writeFile(
@@ -309,42 +317,63 @@ async function runSDK( env ) {
   let metadata
 
   try {
-    metadata = require( `${env.configBase}/Contents/metadata.json` )
+    metadata = require( `${env.configBase}/contents/metadata.json` )
   } catch( e ) {
     if ( e.code === `MODULE_NOT_FOUND` ) {
-      console.log( `metadata.json not found in: ${env.cwd}` )
+      console.log( `metadata.json not found in: ${env.cwd}/contents/` )
       process.exit( 1 )
-    } else {
-      throw e
-    }
+    } else throw e
   }
 
-  const html = '../node_modules/maf3-sdk/index.html'
+  const html = './node_modules/maf3-sdk/index.html'
   const config = require( env.configPath )
-  const apps = await dirs( path.resolve( __dirname, `../node_modules/maf3-sdk/apps/` ) )
+  const apps = dirs( path.resolve( env.configBase, `./node_modules/maf3-sdk/apps/` ) )
 
-  fs.createReadStream( path.resolve( __dirname, `../lib/index.html` ) )
-    .pipe( fs.createWriteStream( path.resolve( __dirname, html ) ) )
+  const fileRead = fs.createReadStream( path.resolve( __dirname, `../lib/index.html` ) )
+  const fileWrite = fs.createWriteStream( path.resolve( env.configBase, html ) )
 
-  apps.push( metadata.identifier )
+  fileRead.pipe( fileWrite )
+
+  fileRead.on( 'end', _ => fileWrite.end() )
+
+  const fileEnd = new Promise( function( resolve, reject ) {
+    fileRead.on( 'end', _ => resolve( true ) )
+    fileRead.on( 'error', reject )
+  } )
+
+  await fileEnd
+
+  if ( !apps.find( app => app === metadata.identifier ) )
+    apps.push( metadata.identifier )
 
   const merged = Object.assign( Object.assign( {}, mae ), config )
   merged.categories = mae.categories.concat( metadata.categories )
   merged.apps = apps
 
-  await replaceRegexInFile(
-    path.resolve( __dirname, html )
+  replaceRegexInFile(
+    path.resolve( env.configBase, html )
   , /{{MAE}}/gi
   , `var MAE = ${JSON.stringify( merged, null, 2 )}`
   )
 
   try {
-    await symlink( env.configBase, path.resolve( __dirname, `../node_modules/maf3-sdk/apps/${metadata.identifier}` ), `dir` )
+    await symlink(
+      env.configBase
+    , path.resolve(
+        env.configBase
+      , `./node_modules/maf3-sdk/apps/${metadata.identifier}`
+      )
+    , `dir`
+    )
   } catch( e ) {
     if ( e.code !== `EEXIST` ) throw e
   }
 
-  fork( require.resolve( `maf3-sdk` ), [], { cwd: process.cwd() } )
+  fork(
+    path.resolve( env.configBase, `./node_modules/maf3-sdk/sdk.js` )
+  , []
+  , { cwd: env.cwd }
+  )
 }
 
 async function dirs( root ) {
@@ -357,20 +386,15 @@ async function dirs( root ) {
 }
 
 async function replaceRegexInFile( file, search, replace ) {
-
   const contents = await readFile( file, fileType )
   const replaced = contents.replace( search, replace )
   const tmpfile = `${file}.jstmpreplace`
 
   await writeFile( tmpfile, replaced, fileType )
   await rename( tmpfile, file )
-
-  return true
 }
 
-function stop( code ) {
-  this.exit( code || 0 )
-}
+function stop( code ) { this.exit( code || 0 ) }
 
 process.once( SIGINT, stop )
 process.once( `SIGTERM`, stop )
