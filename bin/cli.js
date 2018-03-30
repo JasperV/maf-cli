@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-// const log = require( '../lib/log' )
+const log = require( '../lib/log' )
 const Liftoff = require( 'liftoff' )
 const fetch = require( 'node-fetch' )
 const retry = require( 'async-retry' )
@@ -181,8 +181,8 @@ function packageApp( env, cb ) {
   zipFile.on( 'close', function() { if ( cb ) cb( env ) } )
 
   archive.append( null, { name: `${identifier}/` } )
-  archive.append( null, { name: `${identifier}/Contents/` } )
-  archive.directory( `./Contents`, `${identifier}/Contents/` )
+  archive.append( null, { name: `${identifier}/contents/` } )
+  archive.directory( `./contents`, `${identifier}/contents/` )
   archive.pipe( zipFile )
   archive.finalize()
 
@@ -327,7 +327,7 @@ async function runSDK( env ) {
 
   const html = './node_modules/maf3-sdk/index.html'
   const config = require( env.configPath )
-  const apps = dirs( path.resolve( env.configBase, `./node_modules/maf3-sdk/apps/` ) )
+  const apps = await dirs( path.resolve( env.configBase, `./node_modules/maf3-sdk/apps/` ) )
 
   const fileRead = fs.createReadStream( path.resolve( __dirname, `../lib/index.html` ) )
   const fileWrite = fs.createWriteStream( path.resolve( env.configBase, html ) )
