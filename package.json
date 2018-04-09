@@ -3,29 +3,21 @@
   "version": "1.0.6",
   "description": "MAF SDK Command Line Interface",
   "main": "index.js",
-  "bin": {
-    "maf": "bin/cli.js"
-  },
-  "engines": {
-    "node": ">=8.0.0"
-  },
+  "bin": { "maf": "bin/cli.js" },
+  "engines": { "node": ">=8.0.0" },
   "scripts": {
     "start": "node index.js",
     "prepare": "pkg-ok",
     "postinstall": "node lib/install.js"
   },
-  "keywords": [
-    "TODO"
-  ],
+  "keywords": [ "TODO" ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/JasperV/maf-cli.git"
   },
   "author": "JasperV (https://git.io/jasperv)",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/JasperV/maf-cli/issues"
-  },
+  "bugs": { "url": "https://github.com/JasperV/maf-cli/issues" },
   "homepage": "https://github.com/JasperV/maf-cli#readme",
   "devDependencies": {
     "pkg-ok": "1.1.0"
@@ -37,7 +29,7 @@
     "form-data": "2.3.1",
     "inquirer": "5.1.0",
     "liftoff": "2.5.0",
-    "maf3-sdk": "1.0.0",
+    "maf3-sdk": "Metrological/maf3-sdk",
     "minimist": "1.2.0",
     "mkdirp": "0.5.1",
     "node-fetch": "2.0.0",

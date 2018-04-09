@@ -18,6 +18,8 @@ const { createInterface } = require( 'readline' )
 
 require( 'dotenv' ).config()
 
+console.log( 'here' )
+
 const fileType = `utf8`
 const SIGINT = `SIGINT`
 

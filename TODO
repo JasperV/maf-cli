@@ -1,3 +1,15 @@
+zip weggooien als publish gelukt
+allow for working on sdk apps - e.g. double namespaces
+init - vragen om api key
+loading indicator - https://github.com/sindresorhus/ora
+.mafrc amend if exists
+watch .mafrc and hot reload
+init not overwrite when exists
+-v command - again, add to features much like gulp
+runkit examples + npm documentation
+favicon in sdk html
+full sdk + compiler et. all
+
 remove debug log
 fix readme
 add nodei and others
