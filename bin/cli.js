@@ -150,9 +150,9 @@ async function initApp( env ) {
   fs.createReadStream( path.resolve( __dirname, `../lib/icon.psd` ) )
     .pipe( fs.createWriteStream( `${contents}/images/icon.psd` ) )
 
-  await mkdir( `${contents}/localization` )
-  await writeFile( `${contents}/localization/en-eu.strings`, `// EN`, fileType )
-  await writeFile( `${contents}/localization/${language}-eu.strings`, `// ${language.toUpperCase()}`, fileType )
+  await mkdir( `${contents}/Localization` )
+  await writeFile( `${contents}/Localization/en-eu.strings`, `// EN`, fileType )
+  await writeFile( `${contents}/Localization/${language}-eu.strings`, `// ${language.toUpperCase()}`, fileType )
   await mkdir( `${contents}/javascript` )
   await writeFile( `${contents}/javascript/init.js`, `// init`, fileType )
   await writeFile( `${contents}/javascript/theme.js`, `// theme`, fileType )
@@ -181,8 +181,8 @@ function packageApp( env, cb ) {
   zipFile.on( 'close', function() { if ( cb ) cb( env ) } )
 
   archive.append( null, { name: `${identifier}/` } )
-  archive.append( null, { name: `${identifier}/contents/` } )
-  archive.directory( `./contents`, `${identifier}/contents/` )
+  archive.append( null, { name: `${identifier}/Contents/` } )
+  archive.directory( `./contents`, `${identifier}/Contents/` )
   archive.pipe( zipFile )
   archive.finalize()
 
