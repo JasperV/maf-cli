@@ -9,6 +9,8 @@ init not overwrite when exists
 runkit examples + npm documentation
 favicon in sdk html
 full sdk + compiler et. all
+add travis + appveyor for windows support
+gulp like autocompletion
 
 remove debug log
 fix readme

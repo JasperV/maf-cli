@@ -1,3 +1,5 @@
 #!/usr/bin/env node
 
-module.exports = require( './bin/cli.js' ) // eslint-disable-line quotes
+'use strict'
+
+module.exports = require( './bin/cli.js' )
