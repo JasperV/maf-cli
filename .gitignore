@@ -1,5 +1,4 @@
 node_modules
-lib/translation.json
 
 *.tmp
 *.DS_Store

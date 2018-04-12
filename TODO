@@ -2,13 +2,11 @@ zip weggooien als publish gelukt
 allow for working on sdk apps - e.g. double namespaces
 init - vragen om api key
 loading indicator - https://github.com/sindresorhus/ora
-.mafrc amend if exists
 watch .mafrc and hot reload
-init not overwrite when exists
--v command - again, add to features much like gulp
 runkit examples + npm documentation
 favicon in sdk html
 full sdk + compiler et. all
+allow for es6 as well via compiler ;)
 add travis + appveyor for windows support
 gulp like autocompletion
 
@@ -40,6 +38,7 @@ eslint-plugin-unicorn
 use compiler
 sdk use all available cores - also compiler
 remove keys from sdk and completely refactor it
+electron version
 
 
 various:

@@ -45,7 +45,7 @@
     "liftoff": "2.5.0",
     "maf3-sdk": "Metrological/maf3-sdk",
     "minimist": "1.2.0",
-    "mkdirp": "0.5.1",
+    "mkdirp-promise": "5.0.1",
     "mute-stdout": "1.0.0",
     "node-fetch": "2.0.0",
     "parse-author": "2.0.0",
@@ -53,6 +53,7 @@
     "replace-homedir": "1.0.0",
     "semver-greatest-satisfied-range": "1.1.0",
     "undertaker": "1.2.0",
+    "vinyl-fs": "3.0.2",
     "yargs": "^7.1.0"
   }
 }
