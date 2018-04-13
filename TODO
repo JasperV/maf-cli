@@ -1,10 +1,12 @@
 zip weggooien als publish gelukt
+update readme
 allow for working on sdk apps - e.g. double namespaces
-init - vragen om api key
 loading indicator - https://github.com/sindresorhus/ora
-watch .mafrc and hot reload
+watch .mafrc and hot reload - connected to browser
 runkit examples + npm documentation
 favicon in sdk html
+analytics tracking - in cli and in browser? - cli errors!
+icon for command line - favicon
 full sdk + compiler et. all
 allow for es6 as well via compiler ;)
 add travis + appveyor for windows support
@@ -13,16 +15,12 @@ gulp like autocompletion
 remove debug log
 fix readme
 add nodei and others
-// TODO: modularize - also plugins for ML specific
-ML specific init - for default config --metro???
+// TODO: modularize - also plugins for ML specific??
 travis, appveyor
 auto update version from package.json
-copy gulp behaviour
 eslint
-messages on current dir not maf app/repo
 sdk winston log last items ... - - ???
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
-fancy pants output on terminal
 try to work around current sdk - ergo, make THIS the SDK;
   - use only public maf.js lib
   - create proxy module
