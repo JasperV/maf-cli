@@ -1,8 +1,9 @@
 zip weggooien als publish gelukt
+loading indicator - https://github.com/sindresorhus/ora in alle tasks die http requests doen
 update readme
 allow for working on sdk apps - e.g. double namespaces
-loading indicator - https://github.com/sindresorhus/ora
 watch .mafrc and hot reload - connected to browser
+watch metadata en packagejson update version in other on change
 runkit examples + npm documentation
 favicon in sdk html
 analytics tracking - in cli and in browser? - cli errors!
@@ -11,6 +12,7 @@ full sdk + compiler et. all
 allow for es6 as well via compiler ;)
 add travis + appveyor for windows support
 gulp like autocompletion
+promisify tasks
 
 remove debug log
 fix readme
@@ -37,7 +39,10 @@ use compiler
 sdk use all available cores - also compiler
 remove keys from sdk and completely refactor it
 electron version
-
+https://www.npmjs.com/package/gulp-duration
+https://www.npmjs.com/package/gulp-total-task-time
+https://www.npmjs.com/package/gulp-stats
+https://www.npmjs.com/package/gulp-runtime
 
 various:
 args
