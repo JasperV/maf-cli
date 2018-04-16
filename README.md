@@ -3,7 +3,7 @@
 ## TODO: put in maf.sh for curl command
 npm i -g maf-cli
 touch .mafrc.js
-maf init (runs: npm init, git init, git add remote, scaffolds maf project)
+maf init (runs: npm init, git init, git add remote and scaffolds maf project)
 
 ## MAF key combinations:
 RC - Stop       = Shift + Down.
