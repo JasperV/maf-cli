@@ -13,6 +13,7 @@ allow for es6 as well via compiler ;)
 add travis + appveyor for windows support
 gulp like autocompletion
 promisify tasks
+err.showStack = false, om niet stack te laten zien
 
 remove debug log
 fix readme
