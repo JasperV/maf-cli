@@ -1,6 +1,4 @@
-err.showStack = false, om niet stack te laten zien
 promisify tasks - async staat haaks op done() dus nu niet goed geimplementeerd nu
-gulp like autocompletion
 watch metadata en packagejson update version in other on change
 auto update version from package.json
   https://github.com/yeoman/update-notifier
@@ -19,14 +17,17 @@ full sdk + compiler et. all
   sdk use all available cores - also compiler
   remove keys from sdk and completely refactor it
 allow for es6 as well via compiler ;)
-watch .mafrc and hot reload - connected to browser
+blessed ui
 add travis + appveyor for windows support
 analytics tracking - in cli and in browser? - cli errors!
+watch .mafrc and hot reload - connected to browser
 auto open in chrome tab - autostart app - maf autostart function
   monitor chrome tab for memory usage
 eslint maf-cli
   eslint-plugin-unicorn
 unit tests
+better autocomplete support
+  https://github.com/mklabs/tabtab
 runkit examples + npm documentation
 notifications via sidebar e.g. growl etc...
 electron version
