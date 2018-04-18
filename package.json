@@ -1,6 +1,6 @@
 {
   "name": "maf-cli",
-  "version": "1.1.6",
+  "version": "1.2.6",
   "description": "MAF SDK Command Line Interface",
   "main": "index.js",
   "bin": {
@@ -42,6 +42,7 @@
     "dotenv": "5.0.0",
     "fetch": "1.1.0",
     "form-data": "2.3.1",
+    "glob-watcher": "5.0.1",
     "inquirer": "5.1.0",
     "is-git-url": "1.0.0",
     "is-semver": "1.0.8",
@@ -57,7 +58,7 @@
     "replace-homedir": "1.0.0",
     "semver-greatest-satisfied-range": "1.1.0",
     "shelljs": "0.8.1",
-    "undertaker": "1.0.0",
+    "undertaker": "1.2.0",
     "vinyl-fs": "3.0.2",
     "yargs": "7.1.0"
   }
