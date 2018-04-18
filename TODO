@@ -1,11 +1,17 @@
 zip weggooien als publish gelukt
+maf -t logo ml bovenaan
 loading indicator - https://github.com/sindresorhus/ora in alle tasks die http requests doen
+publish ook support requests - vragen
+upload ook support requests vragen
+als alles werkt release overbodig ivm auto-release?
 update readme
+sdk server ngrok
 allow for working on sdk apps - e.g. double namespaces
 watch .mafrc and hot reload - connected to browser
 watch metadata en packagejson update version in other on change
 runkit examples + npm documentation
 favicon in sdk html
+notifications via sidebar e.g. growl etc...
 analytics tracking - in cli and in browser? - cli errors!
 icon for command line - favicon
 full sdk + compiler et. all
