@@ -1,4 +1,3 @@
-promisify tasks - async staat haaks op done() dus nu niet goed geimplementeerd nu
 watch metadata en packagejson update version in other on change
 auto update version from package.json
   https://github.com/yeoman/update-notifier
