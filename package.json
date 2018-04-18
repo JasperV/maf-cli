@@ -52,6 +52,7 @@
     "mkdirp-promise": "5.0.1",
     "mute-stdout": "1.0.0",
     "node-fetch": "2.0.0",
+    "ora": "2.0.0",
     "pretty-hrtime": "1.0.3",
     "replace-homedir": "1.0.0",
     "semver-greatest-satisfied-range": "1.1.0",

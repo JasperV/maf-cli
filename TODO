@@ -1,57 +1,43 @@
-zip weggooien als publish gelukt
-maf -t logo ml bovenaan
-loading indicator - https://github.com/sindresorhus/ora in alle tasks die http requests doen
+err.showStack = false, om niet stack te laten zien
+promisify tasks - async staat haaks op done() dus nu niet goed geimplementeerd nu
+gulp like autocompletion
+watch metadata en packagejson update version in other on change
+auto update version from package.json
+  https://github.com/yeoman/update-notifier
+update/fix readme
+add nodei and others
 publish ook support requests - vragen
 upload ook support requests vragen
 als alles werkt release overbodig ivm auto-release?
-update readme
-sdk server ngrok
 allow for working on sdk apps - e.g. double namespaces
-watch .mafrc and hot reload - connected to browser
-watch metadata en packagejson update version in other on change
-runkit examples + npm documentation
-favicon in sdk html
-notifications via sidebar e.g. growl etc...
-analytics tracking - in cli and in browser? - cli errors!
-icon for command line - favicon
-full sdk + compiler et. all
-allow for es6 as well via compiler ;)
-add travis + appveyor for windows support
-gulp like autocompletion
-promisify tasks - async staak haaks op done() dus nu niet goed geimplementeerd
-err.showStack = false, om niet stack te laten zien
-
-remove debug log
-fix readme
-add nodei and others
-// TODO: modularize - also plugins for ML specific??
-travis, appveyor
-auto update version from package.json
-eslint
-sdk winston log last items ... - - ???
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
-try to work around current sdk - ergo, make THIS the SDK;
-  - use only public maf.js lib
-  - create proxy module
-  - refer properly to docs and src
-https://github.com/yeoman/update-notifier
-https://medium.freecodecamp.org/node-js-child-processes-everything-you-need-to-know-e69498fe970a
-add ngrok to sdk as option, like maf-docs - combine with https://github.com/zeit/serve
-auto open in chrome tab - autostart app - maf autostart function
-allow hotreloading when editing code - e.g. watch files etc...
-monitor chrome tab for memory usage
 .sh install from internet
-eslint-plugin-unicorn
-use compiler
-sdk use all available cores - also compiler
-remove keys from sdk and completely refactor it
+favicon in sdk html
+sdk server ngrok
+  https://github.com/zeit/serve
+full sdk + compiler et. all
+  sdk use all available cores - also compiler
+  remove keys from sdk and completely refactor it
+allow for es6 as well via compiler ;)
+watch .mafrc and hot reload - connected to browser
+add travis + appveyor for windows support
+analytics tracking - in cli and in browser? - cli errors!
+auto open in chrome tab - autostart app - maf autostart function
+  monitor chrome tab for memory usage
+eslint maf-cli
+  eslint-plugin-unicorn
+unit tests
+runkit examples + npm documentation
+notifications via sidebar e.g. growl etc...
 electron version
+
+
+
+various:
 https://www.npmjs.com/package/gulp-duration
 https://www.npmjs.com/package/gulp-total-task-time
 https://www.npmjs.com/package/gulp-stats
 https://www.npmjs.com/package/gulp-runtime
-
-various:
 args
 inquirer
 command

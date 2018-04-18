@@ -2,9 +2,9 @@
 
 'use strict'
 
-// const log = require( '../lib/log' )
 const sdk = require( '../lib/sdk' )
 
+// TODO: remove before release
 console.log( 'linked dev instance!' )
 
 sdk.cli()
