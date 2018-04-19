@@ -26,7 +26,7 @@ After running `maf init` all requirements will be created, installed and scaffol
 
 To use this module with an already existing app, simply move that app out of the MAF3 SDK folder into it's own and run `maf init` on it.
 
-As as shorthand you could run `curl -o- -L https:// | bash` from within your project folder.
+As as shorthand you could run `curl -o- -L https://git.io/maf-cli | bash` from within your project folder.
 
 ## Usage
 

@@ -2,11 +2,11 @@
 set -e
 
 # This script is meant for quick & easy install via:
-#   $ curl -o- -L https:// | bash
+#   $ curl -o- -L https://git.io/maf-cli | bash
 #
 # NOTE: Make sure to verify the contents of the script
 #       you downloaded matches the contents of install.sh
-#       located at https://github.com/jasperv/maf-cli
+#       located at https://github.com/JasperV/maf-cli
 #       before executing.
 #
 

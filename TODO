@@ -1,7 +1,5 @@
-put in maf.sh for curl command
 publish ook support requests - vragen
 upload ook support requests vragen
-als alles werkt release overbodig ivm auto-release?
 allow for working on sdk apps - e.g. double namespaces
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
 .sh install from internet
