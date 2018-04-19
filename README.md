@@ -1,6 +1,8 @@
-# 📺 MAF CLI
+# 📺 MAF SDK Command Line Interface
 
 > Development automation for your MAF3-SDK App projects
+
+[![NPM](https://nodei.co/npm/maf-cli.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/maf-cli/)
 
 #### Contents
 
@@ -48,6 +50,18 @@ For an overview of available options and commands, use `maf --help`
 | `blue` | F4 |
 | `channel up` | PageUp |
 | `channel down` | PageDown |
+
+## Issue Submission
+
+Please use GitHub Issues for issue submission.
+
+## Feature requests
+
+Feature requests can be submitted via Issues as well.
+
+## Contribute
+
+Feel free to send in any pull requests.
 
 ## Shell completion for maf
 
