@@ -1,6 +1,8 @@
-# maf-cli
+# 📺 MAF CLI
 
 ## TODO: put in maf.sh for curl command
+
+## Installation
 
 npm i -g maf-cli
 
