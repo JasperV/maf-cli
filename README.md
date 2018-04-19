@@ -17,6 +17,7 @@
 
 ```sh
 $ npm i -g maf-cli
+$ npm i -D maf-cli
 $ touch .mafrc.js
 $ maf init
 $ maf --tasks

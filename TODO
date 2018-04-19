@@ -1,8 +1,17 @@
 publish ook support requests - vragen
 upload ook support requests vragen
+update npm page
+  keywords
+use git tags for npm releases
+  https://github.com/webpro/release-it
+  https://www.npmjs.com/package/semantic-release
+  https://github.com/semantic-release/cli
+  https://github.com/zeit/release
 allow for working on sdk apps - e.g. double namespaces
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
-.sh install from internet
+  https://github.com/typicode/pkg-ok
+  husky
+  https://github.com/zeit/git-hooks
 favicon in sdk html
 sdk server ngrok
   https://github.com/zeit/serve
