@@ -19,7 +19,14 @@
 $ npm i -g maf-cli
 $ touch .mafrc.js
 $ maf init
+$ maf --tasks
 ```
+
+After running `maf init` all requirements will be created, installed and scaffolded based on the answers you provide. Some tasks have a dependency on a Metrological Dashboard API key. You can get one [here](https://dashboard.metrological.com/#/profile/api).
+
+To use this module with an already existing app, simply move that app out of the MAF3 SDK folder into it's own and run `maf init` on it.
+
+As as shorthand you could run `curl -o- -L https:// | bash` from within your project folder.
 
 ## Usage
 
@@ -85,6 +92,8 @@ This module borrows heavily from [Gulp](https://gulpjs.com/).
 
 You can learn more about the MAF3-SDK at it's [website](https://mafsdk.tv/), or on [GitHub](https://git.io/maf3-sdk).
 
+For any questions regarding App developement please use the [Metrological Helpdesk](https://metrological.atlassian.net/servicedesk/customer/portal/).
+
 ## License
 
-MIT License
+MIT
