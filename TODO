@@ -1,4 +1,3 @@
-watch metadata en packagejson update version in other on change
 auto update version from package.json
   https://github.com/yeoman/update-notifier
 update/fix readme
