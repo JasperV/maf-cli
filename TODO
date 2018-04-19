@@ -1,7 +1,6 @@
-auto update version from package.json
-  https://github.com/yeoman/update-notifier
 update/fix readme
 add nodei and others
+put in maf.sh for curl command
 publish ook support requests - vragen
 upload ook support requests vragen
 als alles werkt release overbodig ivm auto-release?
