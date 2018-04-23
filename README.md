@@ -71,18 +71,6 @@ Feature requests can be submitted via Issues as well.
 
 Feel free to send in any pull requests.
 
-## Shell completion for maf
-
-To enable tasks auto-completion in shell you should add `eval "$(maf --completion=shell)"` in your `.shellrc` file.
-
-### Bash
-
-Add `eval "$(maf --completion=bash)"` to `~/.bashrc`.
-
-### Zsh
-
-Add `eval "$(maf --completion=zsh)"` to `~/.zshrc`.
-
 ## About
 
 The idea for this module came from the desire to take the development of MAF3 apps into the 21st century. To allow for anyone to focus on building the app and less on managing releases and configuring the runtime environment. This module allows for your project to easily depend on the MAF3-SDK and make CI and CD more simple to handle. This is the first iteration of hopefully many more to come.
