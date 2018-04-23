@@ -21,6 +21,8 @@ full sdk + compiler et. all
   remove keys from sdk and completely refactor it
 allow for es6 as well via compiler ;)
 blessed ui
+fix inquirer ctrl-c behaviour
+  inquirer bottom bar ui progress bar
 add travis + appveyor for windows support
 analytics tracking - in cli and in browser? - cli errors!
 watch .mafrc and hot reload - connected to browser
