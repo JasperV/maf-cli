@@ -1,10 +1,3 @@
-publish ook support requests - vragen
-upload ook support requests vragen
-use git tags for npm releases
-  https://github.com/webpro/release-it
-  https://www.npmjs.com/package/semantic-release
-  https://github.com/semantic-release/cli
-  https://github.com/zeit/release
 allow for working on sdk apps - e.g. double namespaces
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
   https://github.com/typicode/pkg-ok
@@ -27,6 +20,8 @@ auto open in chrome tab - autostart app - maf autostart function
   monitor chrome tab for memory usage
 eslint maf-cli
   eslint-plugin-unicorn
+publish ook support requests - vragen
+upload ook support requests vragen
 add node api
   also properly update all files with exports and #!bin/node etc...
   with unit tests

@@ -4,7 +4,7 @@
 
 [![NPM](https://nodei.co/npm/maf-cli.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/maf-cli/)
 
-#### Contents
+#### 📖 Contents
 
 - [Install](#install)
 - [Usage](#usage)
@@ -13,7 +13,7 @@
 - [MAF3-SDK](#maf3-sdk)
 
 
-## Install
+## 💾 Install
 
 ```sh
 $ npm i -g maf-cli
@@ -29,7 +29,7 @@ To use this module with an already existing app, simply move that app out of the
 
 As as shorthand you could run `curl -L  git.io/maf-cli | bash` from within your project folder. And then run `maf init`.
 
-## Usage
+## ▶️ Usage
 
 ```sh
 $ maf
@@ -43,7 +43,7 @@ To display the list of build-in tasks, use `maf --tasks`
 
 For an overview of available options and commands, use `maf --help`
 
-## MAF key combinations:
+## ⌨️ MAF key combinations:
 
 | Command | Key |
 | --- | --- |
@@ -59,11 +59,11 @@ For an overview of available options and commands, use `maf --help`
 | `channel up` | PageUp |
 | `channel down` | PageDown |
 
-## Issue Submission
+## ❌ Issue Submission
 
 Please use GitHub Issues for issue submission.
 
-## Feature requests
+## ✅ Feature requests
 
 Feature requests can be submitted via Issues as well.
 
@@ -77,12 +77,12 @@ The idea for this module came from the desire to take the development of MAF3 ap
 
 This module borrows heavily from [Gulp](https://gulpjs.com/).
 
-## MAF3-SDK
+## 🛠 MAF3-SDK
 
 You can learn more about the MAF3-SDK at it's [website](https://mafsdk.tv/), or on [GitHub](https://git.io/maf3-sdk).
 
 For any questions regarding App developement please use the [Metrological Helpdesk](https://metrological.atlassian.net/servicedesk/customer/portal/).
 
-## License
+## ©️ License
 
 MIT
