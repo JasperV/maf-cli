@@ -1,6 +1,6 @@
 # 📺 MAF SDK Command Line Interface
 
-> Development automation for your MAF3-SDK App projects
+> Development automation for your MAF3 App projects
 
 [![NPM](https://nodei.co/npm/maf-cli.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/maf-cli/)
 
