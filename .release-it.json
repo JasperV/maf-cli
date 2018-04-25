@@ -1,0 +1,6 @@
+{
+  "increment": "conventional:angular",
+  "github": {
+    "release": false
+  }
+}
