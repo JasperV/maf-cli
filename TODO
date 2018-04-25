@@ -1,8 +1,3 @@
-allow for working on sdk apps - e.g. double namespaces
-use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
-  https://github.com/typicode/pkg-ok
-  husky
-  https://github.com/zeit/git-hooks
 full sdk + compiler et. all
   sdk use all available cores - also compiler
   remove keys from sdk and completely refactor it
@@ -10,6 +5,13 @@ full sdk + compiler et. all
 favicon in sdk html
 sdk server ngrok
   https://github.com/zeit/serve
+allow for working on sdk apps - e.g. double namespaces
+use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
+  https://github.com/typicode/pkg-ok
+  husky
+  https://github.com/zeit/git-hooks
+capture all terminal output and properly log
+  logging module?
 blessed ui
 fix inquirer ctrl-c behaviour
   inquirer bottom bar ui progress bar
