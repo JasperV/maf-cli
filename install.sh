@@ -2,7 +2,7 @@
 set -e
 
 # This script is meant for quick & easy install via:
-#   $ curl -o- -L https://git.io/maf-cli | bash
+#   $ curl -L git.io/maf-cli | bash
 #
 # NOTE: Make sure to verify the contents of the script
 #       you downloaded matches the contents of install.sh
