@@ -5,6 +5,10 @@ full sdk + compiler et. all
 favicon in sdk html
 sdk server ngrok
   https://github.com/zeit/serve
+add helpers as local
+  release-it
+  commitizen
+  conventional
 allow for working on sdk apps - e.g. double namespaces
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
   https://github.com/typicode/pkg-ok
