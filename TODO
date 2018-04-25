@@ -1,7 +1,7 @@
 full sdk + compiler et. all
   sdk use all available cores - also compiler
-  remove keys from sdk and completely refactor it
-  allow for es6 as well via compiler ;)
+  remove api keys from sdk and completely refactor it
+  allow for es6 as well via compiler ;) - output es5 compliant to current compiler
 favicon in sdk html
 sdk server ngrok
   https://github.com/zeit/serve
