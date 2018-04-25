@@ -12,8 +12,7 @@
   "scripts": {
     "start": "node index.js",
     "prepare": "pkg-ok",
-    "postinstall": "node scripts/install.js",
-    "release": "release-it"
+    "postinstall": "node scripts/install.js"
   },
   "keywords": [
     "MAF",
@@ -33,8 +32,7 @@
   "homepage": "https://github.com/JasperV/maf-cli#readme",
   "devDependencies": {
     "eslint": "4.19.1",
-    "pkg-ok": "1.1.0",
-    "release-it": "7.4.1"
+    "pkg-ok": "1.1.0"
   },
   "dependencies": {
     "ansi-colors": "1.1.0",
