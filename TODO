@@ -1,10 +1,18 @@
 full sdk + compiler et. all
-  sdk use all available cores - also compiler
   remove api keys from sdk and completely refactor it
   allow for es6 as well via compiler ;) - output es5 compliant to current compiler
-favicon in sdk html
 sdk server ngrok
   https://github.com/zeit/serve
+add docs to server as well
+  mention in readme and in console.log in index.html
+make cert app specific
+  or test that it works in multiple instances
+disable http in favor of https
+  add option for http
+add all .env and .mafrc.js to readme + define own tasks!
+add moving from sdk to cli to readme
+add autostart app to .mafrc.js
+  if available in demo ui
 add helpers as local
   release-it
   commitizen
@@ -16,10 +24,12 @@ use this again, after rewrite - https://github.com/typicode/please-upgrade-node/
   https://github.com/zeit/git-hooks
 capture all terminal output and properly log
   logging module?
-blessed ui
 fix inquirer ctrl-c behaviour
   inquirer bottom bar ui progress bar
+add clustering for use of all cpu cores
+  https://github.com/Metrological/mas/blob/master/server.js
 add travis + appveyor for windows support
+blessed ui
 analytics tracking - in cli and in browser? - cli errors!
 watch .mafrc and hot reload - connected to browser
 auto open in chrome tab - autostart app - maf autostart function

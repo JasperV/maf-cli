@@ -1,5 +1,8 @@
 node_modules
 lib/resources/translation.json
+*.crt
+*.key
+
 
 *.tmp
 *.DS_Store
