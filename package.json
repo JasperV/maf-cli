@@ -33,7 +33,8 @@
   "homepage": "https://github.com/JasperV/maf-cli#readme",
   "devDependencies": {
     "eslint": "4.19.1",
-    "pkg-ok": "1.1.0"
+    "pkg-ok": "1.1.0",
+    "cz-conventional-changelog": "2.1.0"
   },
   "dependencies": {
     "@godaddy/terminus": "2.2.0",
@@ -44,16 +45,18 @@
     "async-retry": "1.1.4",
     "color-support": "1.1.3",
     "compression": "1.7.2",
-    "cz-conventional-changelog": "2.1.0",
     "death": "1.1.0",
     "dotenv": "5.0.0",
     "express": "4.16.3",
     "fetch": "1.1.0",
     "form-data": "2.3.1",
     "glob-watcher": "5.0.1",
+    "harmon": "1.4.2",
+    "http-proxy": "1.17.0",
     "inquirer": "5.1.0",
     "is-git-url": "1.0.0",
     "is-semver": "1.0.8",
+    "is-url": "1.2.4",
     "isobject": "3.0.1",
     "liftoff": "2.5.0",
     "maf3-sdk": "Metrological/maf3-sdk",

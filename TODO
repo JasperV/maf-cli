@@ -1,22 +1,26 @@
 full sdk + compiler et. all
-  remove api keys from sdk and completely refactor it
   allow for es6 as well via compiler ;) - output es5 compliant to current compiler
 sdk server ngrok
   https://github.com/zeit/serve
 add docs to server as well
   mention in readme and in console.log in index.html
+  https://www.caffeinecoding.com/setting-up-subdomains-on-one-express-app-in-heroku/
+  https://github.com/wilsonpage/express-subdomain-handler
+  https://www.npmjs.com/package/express-subdomain
 make cert app specific
-  or test that it works in multiple instances
+  or test that it works in multiple instances - would be nicer
 disable http in favor of https
   add option for http
 add all .env and .mafrc.js to readme + define own tasks!
 add moving from sdk to cli to readme
+move cert.sh to scripts dir - install not as it is already shortlinked to git.io/maf-cli
 add autostart app to .mafrc.js
   if available in demo ui
-add helpers as local
+add helpers as local - check installed global and remove to be sure
   release-it
   commitizen
   conventional
+cleanup package.json - dependencies etc...
 allow for working on sdk apps - e.g. double namespaces
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
   https://github.com/typicode/pkg-ok
@@ -33,6 +37,7 @@ blessed ui
 analytics tracking - in cli and in browser? - cli errors!
 watch .mafrc and hot reload - connected to browser
 auto open in chrome tab - autostart app - maf autostart function
+  https://github.com/GoogleChrome/puppeteer
   monitor chrome tab for memory usage
 eslint maf-cli
   eslint-plugin-unicorn
@@ -43,7 +48,7 @@ add node api
   with unit tests
 better autocomplete support
   https://github.com/mklabs/tabtab
-runkit examples + npm documentation
+runkit examples??? + npm documentation???
 notifications via sidebar e.g. growl etc...
 electron version
 
