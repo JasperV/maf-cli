@@ -4,7 +4,7 @@
 
 const sdk = require( '../lib/sdk' )
 
-console.log( 'linked instance!' )
+console.log( '!LINKED INSTANCE!' )
 
 sdk.cli()
 

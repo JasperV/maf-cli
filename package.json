@@ -73,6 +73,7 @@
     "undertaker": "1.2.0",
     "update-notifier": "2.5.0",
     "vinyl-fs": "3.0.2",
+    "xml2json": "0.11.2",
     "yargs": "7.1.0"
   },
   "config": {

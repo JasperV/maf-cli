@@ -13,7 +13,7 @@ async function getTranslation() {
   const res = await fetch( `https://dashboard.metrological.com/locales/en/translation.json` )
   const translation = await res.json()
 
-  writeFile(
+  await writeFile(
     path.resolve( process.cwd(), `../maf-cli/lib/resources/translation.json` )
   , JSON.stringify( translation, null, 2 )
   )
