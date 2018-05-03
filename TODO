@@ -1,8 +1,7 @@
+on first call to webserver, clear screen - later init blessed then
 full sdk + compiler et. all
   allow for es6 as well via compiler ;) - output es5 compliant to current compiler
 fix double error notice
-sdk server ngrok
-  https://github.com/zeit/serve
 add docs to server as well
   mention in readme and in console.log in index.html
   https://www.caffeinecoding.com/setting-up-subdomains-on-one-express-app-in-heroku/
@@ -17,8 +16,11 @@ add all .env and .mafrc.js to readme + define own tasks! - check all env variabl
 add xml2json to docs
 add moving from sdk to cli to readme
 move cert.sh to scripts dir - install not as it is already shortlinked to git.io/maf-cli
+  https://www.npmjs.com/package/is-npm
 add autostart app to .mafrc.js
   if available in demo ui
+capture eaddrinuse error
+capture ngrok already running error
 add helpers as local - check installed global and remove to be sure
   release-it
   commitizen
@@ -63,4 +65,5 @@ blessed
 clui
 terminal-kit
 vorpal
+https://github.com/vadimdemedes/ink
 https://www.sitepoint.com/javascript-command-line-interface-cli-node-js/
