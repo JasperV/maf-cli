@@ -1,3 +1,4 @@
+clear screen only when starting run task
 on first call to webserver, clear screen - later init blessed then
 full sdk + compiler et. all
   allow for es6 as well via compiler ;) - output es5 compliant to current compiler

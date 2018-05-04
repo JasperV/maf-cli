@@ -2,9 +2,9 @@
 
 'use strict'
 
-const sdk = require( '../lib/sdk' )
+console.log( require( '../lib/util/ansi' ).red('!!!LINKED INSTANCE!!!' ) )
 
-console.log( '!LINKED INSTANCE!' )
+const sdk = require( '../lib/sdk' )
 
 sdk.cli()
 
