@@ -1,7 +1,10 @@
-clear screen only when starting run task
-on first call to webserver, clear screen - later init blessed then
 full sdk + compiler et. all
   allow for es6 as well via compiler ;) - output es5 compliant to current compiler
+
+fix api calls as developer scope
+cache compiler
+init create .env and prefill
+add antenna's on top of boxen to create metro logo
 fix double error notice
 add docs to server as well
   mention in readme and in console.log in index.html
@@ -27,6 +30,7 @@ add helpers as local - check installed global and remove to be sure
   commitizen
   conventional
 cleanup package.json - dependencies etc...
+replace ansi with chalk
 allow for working on sdk apps - e.g. double namespaces
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
   https://github.com/typicode/pkg-ok
@@ -39,9 +43,9 @@ fix inquirer ctrl-c behaviour
 add clustering for use of all cpu cores
   https://github.com/Metrological/mas/blob/master/server.js
 add travis + appveyor for windows support
-blessed ui
-analytics tracking - in cli and in browser? - cli errors!
 watch .mafrc and hot reload - connected to browser
+analytics tracking - in cli and in browser? - cli errors!
+blessed ui
 auto open in chrome tab - autostart app - maf autostart function
   https://github.com/GoogleChrome/puppeteer
   monitor chrome tab for memory usage
@@ -56,6 +60,7 @@ better autocomplete support
   https://github.com/mklabs/tabtab
 runkit examples??? + npm documentation???
 notifications via sidebar e.g. growl etc...
+  https://www.npmjs.com/package/node-notifier
 electron version
 
 

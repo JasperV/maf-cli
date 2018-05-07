@@ -3,7 +3,7 @@
 # TODO: Windows + Linux support
 # https://sdqali.in/blog/2012/06/05/managing-security-certificates-from-the-console---on-windows-mac-os-x-and-linux/
 
-# TODO: make this into a node script
+# TODO: make this into a node script to be run with npm
 
 NAME=MAF3SDK
 EMAIL=sdksupport@metrological.com
