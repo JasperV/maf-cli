@@ -1,5 +1,6 @@
 full sdk + compiler et. all
-  allow for es6 as well via compiler ;) - output es5 compliant to current compiler
+  allow for es6 as well via compiler ;) - output es5 compliant to current compiler - when packaging only!!! make option in settings
+  compare live app to output from compiler
 
 fix api calls as developer scope
 cache compiler
@@ -14,8 +15,7 @@ add docs to server as well
 not create cert and not run install when installed globally
 make cert app specific
   or test that it works in multiple instances - would be nicer
-disable http in favor of https
-  add option for http
+  https://www.caffeinecoding.com/create-self-signed-certificate-https/
 add all .env and .mafrc.js to readme + define own tasks! - check all env variables in code
 add xml2json to docs
 add moving from sdk to cli to readme
