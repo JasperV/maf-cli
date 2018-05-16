@@ -74,6 +74,7 @@
     "mute-stdout": "1.0.0",
     "ngrok": "3.0.1",
     "node-fetch": "2.0.0",
+    "node-persist": "3.0.0",
     "ora": "2.0.0",
     "plur": "3.0.1",
     "pretty-hrtime": "1.0.3",

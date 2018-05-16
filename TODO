@@ -1,11 +1,3 @@
-full sdk + compiler et. all
-  allow for es6 as well via compiler ;) - output es5 compliant to current compiler - when packaging only!!! make option in settings
-  compare live app to output from compiler
-
-fix api calls as developer scope
-cache compiler
-init create .env and prefill
-add antenna's on top of boxen to create metro logo
 fix double error notice
 add docs to server as well
   mention in readme and in console.log in index.html
@@ -17,6 +9,10 @@ make cert app specific
   or test that it works in multiple instances - would be nicer
   https://www.caffeinecoding.com/create-self-signed-certificate-https/
 add all .env and .mafrc.js to readme + define own tasks! - check all env variables in code
+  METROLOGICAL_API_KEY=
+  NODE_ENV=
+  NODE_PORT=
+  NODE_SECURE_PORT=
 add xml2json to docs
 add moving from sdk to cli to readme
 move cert.sh to scripts dir - install not as it is already shortlinked to git.io/maf-cli
@@ -31,6 +27,12 @@ add helpers as local - check installed global and remove to be sure
   conventional
 cleanup package.json - dependencies etc...
 replace ansi with chalk
+fix all TODO's in code
+run npm audit
+run npm-check
+refactor
+metadata.json scripts can be array
+  like release server
 allow for working on sdk apps - e.g. double namespaces
 use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
   https://github.com/typicode/pkg-ok
@@ -46,6 +48,7 @@ add travis + appveyor for windows support
 watch .mafrc and hot reload - connected to browser
 analytics tracking - in cli and in browser? - cli errors!
 blessed ui
+add antenna's on top of boxen to create metro logo
 auto open in chrome tab - autostart app - maf autostart function
   https://github.com/GoogleChrome/puppeteer
   monitor chrome tab for memory usage
