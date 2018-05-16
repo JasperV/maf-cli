@@ -9,6 +9,5 @@ set -e
 # located at https://github.com/JasperV/maf-cli
 # before executing.
 
-npm i -g maf-cli
-npm i -D maf-cli
+npm i -D maf-cli Metrological/maf3-sdk
 touch .mafrc.js

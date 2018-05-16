@@ -12,6 +12,7 @@
   },
   "scripts": {
     "start": "node index.js",
+    "preinstall": "npm i -g maf-cli",
     "prepare": "pkg-ok",
     "postinstall": "node scripts/install.js && cert.sh"
   },
@@ -67,7 +68,6 @@
     "isobject": "3.0.1",
     "liftoff": "2.5.0",
     "log-symbols": "2.2.0",
-    "maf3-sdk": "Metrological/maf3-sdk",
     "minimist": "1.2.0",
     "mkdirp-promise": "5.0.1",
     "morgan": "1.9.0",
