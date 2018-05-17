@@ -4,6 +4,11 @@
 # https://sdqali.in/blog/2012/06/05/managing-security-certificates-from-the-console---on-windows-mac-os-x-and-linux/
 
 # TODO: make this into a node script to be run with npm
+# https://gist.github.com/jed/6147872
+# https://github.com/christianalfoni/create-ssl-certificate/blob/master/bin/create-ssl-certificate.js
+# https://www.npmjs.com/package/pem
+# https://github.com/Dexus/pem
+# perhaps generate on the fly per server start... Only install custom root CA once on init if not exists...
 
 NAME=MAF3SDK
 EMAIL=sdksupport@metrological.com

@@ -9,6 +9,7 @@
 #### 📖 Contents
 
 - [Install](#install)
+- [Configuration](#configuration)
 - [Usage](#usage)
 - [MAF key combinations](#maf-key-combinations)
 - [About](#about)
@@ -30,13 +31,53 @@ To use this module with an already existing app, simply move that app out of the
 
 As as shorthand you could run `curl -L  git.io/maf-cli | bash` from within your project folder. And then run `maf init`.
 
+## ⚙️ Configuration
+
+You can configure the MAF CLI via your .mafrc.js file. It has the following (default) options available:
+
+```javascript
+{
+  language: `nl` // set the default language of the Store and App
+, es6: false // when true all your code will be transpiled (via the Closure Compiler) to ES5 before running and publishing
+, autostart: false // when true auto-starts your app when browsing to https://localhost:8443
+}
+```
+
+Additionally, you are able to define your own tasks within your maffile.
+
+```javascript
+const maf = require( 'maf-cli' )
+
+module.exports = {
+  language: `nl`
+, function hello() {
+    console.log( `world` )
+  }
+}
+```
+
+This can be used to integrate any other tools you might use, or preprocess certain files.
+
+You may also set some environment variables:
+
+METROLOGICAL_API_KEY="YOUR_API_KEY_HERE" # this is used for publishing your App
+NODE_ENV=production # set to production to mimic the production environment
+NODE_PORT=9090 # you are free to change this
+NODE_SECURE_PORT=9443 # you are free to change this
+
+## Moving from maf3-sdk to maf-cli
+
+If you are accustomed to working with the maf3-sdk then working with the maf-cli should be transparent. A lot of things are now handled for you. You can now depend your project on the maf-cli vs. running your app within the maf3-sdk. 
+All apps from the maf3-sdk are included. As well as any dependencies.
+Your index.html file is no longer required. Any configuration you might have in there can be copied over to your maffile (.mafrc.js). Declaring your app, categories and ui is no longer required.
+
 ## ▶️ Usage
 
 ```sh
 $ maf
 ```
 
-The default task (run) will run and starts the [SDK Server](http://localhost:8080).
+The default task (run) will run and starts the [SDK Server](https://localhost:8443).
 
 To run individual tasks, use `maf <task>`.
 
@@ -63,6 +104,10 @@ For an overview of available options and commands, use `maf --help`
 ## ❌ Issue Submission
 
 Please use GitHub Issues for issue submission.
+
+## Known Issues
+
+The build-in proxy service uses xml2json which uses node-expat. On Windows this requires some extra work. Please refer to it's [documentation](https://www.npmjs.com/package/xml2json).
 
 ## ✅ Feature requests
 

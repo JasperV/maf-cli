@@ -1,27 +1,22 @@
 try commander.js over yargs
+capture eaddrinuse error
+capture ngrok already running error
 fix double error notice
+fix all TODO's in code
+refactor
+
 add docs to server as well
   mention in readme and in console.log in index.html
   https://www.caffeinecoding.com/setting-up-subdomains-on-one-express-app-in-heroku/
   https://github.com/wilsonpage/express-subdomain-handler
   https://www.npmjs.com/package/express-subdomain
-not create cert and not run install when installed globally
 make cert app specific
   or test that it works in multiple instances - would be nicer
   https://www.caffeinecoding.com/create-self-signed-certificate-https/
-add all .env and .mafrc.js to readme + define own tasks!
-add xml2json to docs
-add moving from sdk to cli to readme
-add autostart app to .mafrc.js
-  if available in demo ui
-capture eaddrinuse error
-capture ngrok already running error
-cleanup package.json - dependencies etc...
-run npm-check
-replace chalk with ansi
-fix all TODO's in code
-run npm audit
-refactor
+work with host file
+  https://www.npmjs.com/package/hostile
+  https://github.com/qiu8310/host
+  https://www.npmjs.com/package/etc-hosts
 metadata.json scripts can be array
   like release server
 allow for working on sdk apps - e.g. double namespaces
