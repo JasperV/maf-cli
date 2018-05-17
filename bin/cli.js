@@ -3,7 +3,7 @@
 'use strict'
 
 // TODO: remove before publish
-console.log( require( '../lib/util/ansi' ).red('!!!LINKED INSTANCE!!!' ) )
+console.log( require( '../lib/util/ansi' ).red.bold('!!!LINKED INSTANCE!!!' ) )
 
 const sdk = require( '../lib/sdk' )
 

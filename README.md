@@ -8,12 +8,12 @@
 
 #### 📖 Contents
 
-- [Install](#install)
-- [Configuration](#configuration)
-- [Usage](#usage)
-- [MAF key combinations](#maf-key-combinations)
+- [Install](#-install)
+- [Configuration](#️-configuration)
+- [Usage](#️-usage)
+- [MAF key combinations](#️-maf-key-combinations)
 - [About](#about)
-- [MAF3-SDK](#maf3-sdk)
+- [MAF3-SDK](#-maf3-sdk)
 
 
 ## 💾 Install
@@ -30,6 +30,12 @@ After running `maf init` all requirements will be created, installed and scaffol
 To use this module with an already existing app, simply move that app out of the MAF3 SDK folder into it's own and run `maf init` on it.
 
 As as shorthand you could run `curl -L  git.io/maf-cli | bash` from within your project folder. And then run `maf init`.
+
+### Moving from maf3-sdk to maf-cli
+
+If you are accustomed to working with the maf3-sdk then working with the maf-cli should be transparent. A lot of things are now handled for you. You can now depend your project on the maf-cli vs. running your app within the maf3-sdk. 
+All apps from the maf3-sdk are included. As well as any dependencies.
+Your index.html file is no longer required. Any configuration you might have in there can be copied over to your maffile (.mafrc.js). Declaring your app, categories and ui is no longer required.
 
 ## ⚙️ Configuration
 
@@ -67,12 +73,6 @@ NODE_PORT=9090 # you are free to change this
 NODE_SECURE_PORT=9443 # you are free to change this
 ```
 
-## Moving from maf3-sdk to maf-cli
-
-If you are accustomed to working with the maf3-sdk then working with the maf-cli should be transparent. A lot of things are now handled for you. You can now depend your project on the maf-cli vs. running your app within the maf3-sdk. 
-All apps from the maf3-sdk are included. As well as any dependencies.
-Your index.html file is no longer required. Any configuration you might have in there can be copied over to your maffile (.mafrc.js). Declaring your app, categories and ui is no longer required.
-
 ## ▶️ Usage
 
 ```sh
@@ -109,7 +109,7 @@ Please use GitHub Issues for issue submission.
 
 ## Known Issues
 
-The build-in proxy service uses xml2json which uses node-expat. On Windows this requires some extra work. Please refer to it's [documentation](https://www.npmjs.com/package/xml2json).
+The build-in proxy service uses xml2json which uses node-expat. On Windows this requires some extra work setting up. Please refer to it's [documentation](https://www.npmjs.com/package/xml2json).
 
 ## ✅ Feature requests
 
