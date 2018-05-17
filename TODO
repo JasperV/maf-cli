@@ -1,9 +1,11 @@
-try commander.js over yargs
 capture eaddrinuse error
 capture ngrok already running error
 fix double error notice
 fix all TODO's in code
 refactor
+test all kinds of apps!!!
+
+
 
 add docs to server as well
   mention in readme and in console.log in index.html
