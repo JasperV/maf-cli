@@ -37,6 +37,7 @@ If you are accustomed to working with the maf3-sdk then working with the maf-cli
 All apps from the maf3-sdk are included. As well as any dependencies.
 Your index.html file is no longer required. Any configuration you might have in there can be copied over to your maffile (.mafrc.js). Declaring your app, categories and ui is no longer required.
 
+
 ## ⚙️ Configuration
 
 You can configure the MAF CLI via your .mafrc.js file. It has the following (default) options available:
@@ -73,6 +74,7 @@ NODE_PORT=9090 # you are free to change this
 NODE_SECURE_PORT=9443 # you are free to change this
 ```
 
+
 ## ▶️ Usage
 
 ```sh
@@ -86,6 +88,7 @@ To run individual tasks, use `maf <task>`.
 To display the list of build-in tasks, use `maf --tasks`
 
 For an overview of available options and commands, use `maf --help`
+
 
 ## ⌨️ MAF key combinations:
 
@@ -103,31 +106,37 @@ For an overview of available options and commands, use `maf --help`
 | `channel up` | PageUp |
 | `channel down` | PageDown |
 
+
 ## ❌ Issue Submission
 
 Please use GitHub Issues for issue submission.
 
-## Known Issues
+### Known Issues
 
 The build-in proxy service uses xml2json which uses node-expat. On Windows this requires some extra work setting up. Please refer to it's [documentation](https://www.npmjs.com/package/xml2json).
+
 
 ## ✅ Feature requests
 
 Feature requests can be submitted via Issues as well.
 
+
 ## Contribute
 
 Feel free to send in any pull requests.
 
+
 ## About
 
 The idea for this module came from the desire to take the development of MAF3 apps into the 21st century. To allow for anyone to focus on building the app and less on managing releases and configuring the runtime environment. This module allows for your project to easily depend on the MAF3-SDK and make CI and CD more simple to handle. This is the first iteration of many more to come.
+
 
 ## 🛠 MAF3-SDK
 
 You can learn more about the MAF3-SDK at it's [website](https://mafsdk.tv/), or on [GitHub](https://git.io/maf3-sdk).
 
 For any questions regarding App developement please use the [Metrological Helpdesk](https://metrological.atlassian.net/servicedesk/customer/portal/).
+
 
 ## ©️ License
 
