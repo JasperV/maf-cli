@@ -1,3 +1,4 @@
+try commander.js over yargs
 fix double error notice
 add docs to server as well
   mention in readme and in console.log in index.html
@@ -11,21 +12,15 @@ make cert app specific
 add all .env and .mafrc.js to readme + define own tasks!
 add xml2json to docs
 add moving from sdk to cli to readme
-move cert.sh to scripts dir - install not as it is already shortlinked to git.io/maf-cli
-  https://www.npmjs.com/package/is-npm
 add autostart app to .mafrc.js
   if available in demo ui
 capture eaddrinuse error
 capture ngrok already running error
-add helpers as local - check installed global and remove to be sure
-  release-it
-  commitizen
-  conventional
 cleanup package.json - dependencies etc...
-replace ansi with chalk
+run npm-check
+replace chalk with ansi
 fix all TODO's in code
 run npm audit
-run npm-check
 refactor
 metadata.json scripts can be array
   like release server

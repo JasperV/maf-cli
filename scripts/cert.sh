@@ -8,7 +8,7 @@
 NAME=MAF3SDK
 EMAIL=sdksupport@metrological.com
 MAC=Darwin
-BITSIZE=4096
+BITSIZE=2048
 DAYS=3650
 HOST=$(hostname)
 LOCALHOST=localhost

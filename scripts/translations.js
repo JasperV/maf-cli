@@ -2,21 +2,15 @@
 
 'use strict'
 
-const fs = require( 'fs' )
 const path = require( 'path' )
 const fetch = require( 'node-fetch' )
-const { promisify } = require( 'util' )
+const writeFile = require( 'util' ).promisify( require( 'fs' ).writeFile )
 
-const writeFile = promisify( fs.writeFile )
-
-async function getTranslation() {
+module.exports = async function() {
   const res = await fetch( `https://dashboard.metrological.com/locales/en/translation.json` )
-  const translation = await res.json()
 
-  await writeFile(
+  return writeFile(
     path.resolve( process.cwd(), `../maf-cli/lib/resources/translation.json` )
-  , JSON.stringify( translation, null, 2 )
+  , JSON.stringify( await res.json(), null, 2 )
   )
 }
-
-getTranslation()
