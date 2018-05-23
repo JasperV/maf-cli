@@ -72,6 +72,7 @@ METROLOGICAL_API_KEY="YOUR_API_KEY_HERE" # this is used for publishing your App
 NODE_ENV=production # set to production to mimic the production environment
 NODE_PORT=9090 # you are free to change this
 NODE_SECURE_PORT=9443 # you are free to change this
+DOCS_PORT=8080 # you are free to change this
 ```
 
 

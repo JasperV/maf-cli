@@ -1,24 +1,17 @@
+test all kinds of apps!!!
 capture eaddrinuse error
 capture ngrok already running error
 fix double error notice
 fix all TODO's in code
 refactor
-test all kinds of apps!!!
 
 
 
-add docs to server as well
-  mention in readme and in console.log in index.html
-  https://www.caffeinecoding.com/setting-up-subdomains-on-one-express-app-in-heroku/
-  https://github.com/wilsonpage/express-subdomain-handler
-  https://www.npmjs.com/package/express-subdomain
 make cert app specific
   or test that it works in multiple instances - would be nicer
-  https://www.caffeinecoding.com/create-self-signed-certificate-https/
 work with host file
   https://www.npmjs.com/package/hostile
-  https://github.com/qiu8310/host
-  https://www.npmjs.com/package/etc-hosts
+  make own task for on and off
 metadata.json scripts can be array
   like release server
 allow for working on sdk apps - e.g. double namespaces
@@ -26,6 +19,9 @@ use this again, after rewrite - https://github.com/typicode/please-upgrade-node/
   https://github.com/typicode/pkg-ok
   husky
   https://github.com/zeit/git-hooks
+
+
+
 capture all terminal output and properly log
   logging module?
 fix inquirer ctrl-c behaviour
@@ -33,13 +29,15 @@ fix inquirer ctrl-c behaviour
 add clustering for use of all cpu cores
   https://github.com/Metrological/mas/blob/master/server.js
 add travis + appveyor for windows support
-watch .mafrc and hot reload - connected to browser
 analytics tracking - in cli and in browser? - cli errors!
 blessed ui
+  headless mode
+  silent mode
 add antenna's on top of boxen to create metro logo
 auto open in chrome tab - autostart app - maf autostart function
   https://github.com/GoogleChrome/puppeteer
   monitor chrome tab for memory usage
+watch .mafrc and hot reload - connected to browser
 eslint maf-cli
   eslint-plugin-unicorn
 publish ook support requests - vragen
