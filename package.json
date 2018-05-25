@@ -13,6 +13,7 @@
   "scripts": {
     "start": "node index.js",
     "preinstall": "npm i -g maf-cli",
+    "preversion": "pkg-ok",
     "prepare": "pkg-ok",
     "release": "release-it",
     "commit": "git-cz"
@@ -75,6 +76,7 @@
     "node-fetch": "2.1.2",
     "node-persist": "3.0.1",
     "ora": "2.1.0",
+    "please-upgrade-node": "3.0.2",
     "plur": "3.0.1",
     "pretty-hrtime": "1.0.3",
     "replace-homedir": "1.0.0",

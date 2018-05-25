@@ -6,17 +6,9 @@ refactor
 
 
 
-bump task
-  major/minor/patch
-metadata.json scripts can be array
-  like release server
-allow for working on sdk apps - e.g. double namespaces
-use this again, after rewrite - https://github.com/typicode/please-upgrade-node/blob/master/index.js
-  https://github.com/typicode/pkg-ok
-  husky
-  https://github.com/zeit/git-hooks
 make cert app specific
   or test that it works in multiple instances - would be nicer
+  install in global???
 
 
 
@@ -30,6 +22,7 @@ fix inquirer ctrl-c behaviour
 add clustering for use of all cpu cores
   https://github.com/Metrological/mas/blob/master/server.js
 add travis + appveyor for windows support
+  npm ci
 analytics tracking - in cli and in browser? - cli errors!
 add antenna's on top of boxen to create metro logo
 auto open in chrome tab - autostart app - maf autostart function
@@ -37,6 +30,7 @@ auto open in chrome tab - autostart app - maf autostart function
   monitor chrome tab for memory usage
 watch .mafrc and hot reload - connected to browser
 eslint maf-cli
+  zeit/git-hooks
   eslint-plugin-unicorn
 publish ook support requests - vragen
 upload ook support requests vragen

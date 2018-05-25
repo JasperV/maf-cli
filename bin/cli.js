@@ -2,6 +2,8 @@
 
 'use strict'
 
+require( 'please-upgrade-node' )( require( '../package.json' ) )
+
 // TODO: remove before publish
 console.log( require( '../lib/util/ansi' ).red.bold('!!!LINKED INSTANCE!!!' ) )
 
