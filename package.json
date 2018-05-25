@@ -12,9 +12,10 @@
   },
   "scripts": {
     "start": "node index.js",
-    "preinstall": "npm i -g maf-cli",
-    "preversion": "pkg-ok",
     "prepare": "pkg-ok",
+    "preversion": "pkg-ok",
+    "preinstall": "npm i -g maf-cli",
+    "postinstall": "./scripts/cert.sh",
     "release": "release-it",
     "commit": "git-cz"
   },

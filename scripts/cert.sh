@@ -8,7 +8,15 @@
 # https://github.com/christianalfoni/create-ssl-certificate/blob/master/bin/create-ssl-certificate.js
 # https://www.npmjs.com/package/pem
 # https://github.com/Dexus/pem
-# perhaps generate on the fly per server start... Only install custom root CA once on init if not exists...
+# The solution is to check !!process.env.npm_config_global in the postinstall script. That environment variable will be true only if the package was installed globally.
+
+
+echo $PWD
+echo $(npm root -g)
+
+if ! [ $PWD == $(npm root -g) ]; then
+  exit 0
+fi
 
 NAME=MAF3SDK
 EMAIL=sdksupport@metrological.com

@@ -6,12 +6,6 @@ refactor
 
 
 
-make cert app specific
-  or test that it works in multiple instances - would be nicer
-  install in global???
-
-
-
 blessed ui
   headless mode
   silent mode
