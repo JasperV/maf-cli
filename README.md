@@ -19,6 +19,7 @@
 ## 💾 Install
 
 ```sh
+$ npm i -g maf-cli
 $ npm i -D maf-cli Metrological/maf3-sdk
 $ touch .mafrc.js
 $ maf init

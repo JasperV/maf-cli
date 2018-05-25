@@ -14,7 +14,6 @@
     "start": "node index.js",
     "prepare": "pkg-ok",
     "preversion": "pkg-ok",
-    "preinstall": "npm i -g maf-cli",
     "postinstall": "./scripts/cert.sh",
     "release": "release-it",
     "commit": "git-cz"
