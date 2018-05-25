@@ -10,11 +10,7 @@
 # https://github.com/Dexus/pem
 # The solution is to check !!process.env.npm_config_global in the postinstall script. That environment variable will be true only if the package was installed globally.
 
-
-echo $PWD
-echo $(npm root -g)
-
-if ! [ $PWD == $(npm root -g) ]; then
+if ! [ $PWD == "$(npm root -g)/maf-cli" ]; then
   exit 0
 fi
 
