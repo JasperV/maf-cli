@@ -1,3 +1,13 @@
+<a name="1.5.6"></a>
+## [1.5.6](https://github.com/JasperV/maf-cli/compare/1.5.5...1.5.6) (2018-05-25)
+
+
+### Bug Fixes
+
+* **installation:** fix path in certificate check ([2793c26](https://github.com/JasperV/maf-cli/commit/2793c26))
+
+
+
 <a name="1.5.5"></a>
 ## [1.5.5](https://github.com/JasperV/maf-cli/compare/1.5.4...1.5.5) (2018-05-25)
 
