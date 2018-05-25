@@ -17,6 +17,7 @@ BITSIZE=2048
 DAYS=3650
 HOST=$(hostname)
 LOCALHOST=localhost
+MAF=maf
 ROOTNAME=rootCA
 ROOTKEY="$ROOTNAME.key"
 ROOTPEM="$ROOTNAME.pem"
@@ -77,6 +78,7 @@ subjectAltName=@alt_names
 [alt_names]
 DNS.1=$HOST
 DNS.2=$LOCALHOST
+DNS.3=$MAF
 $IPSV3
 EOL
 

@@ -1,5 +1,4 @@
 test all kinds of apps!!!
-capture eaddrinuse error
 capture ngrok already running error
 fix double error notice
 fix all TODO's in code
@@ -7,11 +6,8 @@ refactor
 
 
 
-make cert app specific
-  or test that it works in multiple instances - would be nicer
-work with host file
-  https://www.npmjs.com/package/hostile
-  make own task for on and off
+bump task
+  major/minor/patch
 metadata.json scripts can be array
   like release server
 allow for working on sdk apps - e.g. double namespaces
@@ -19,9 +15,14 @@ use this again, after rewrite - https://github.com/typicode/please-upgrade-node/
   https://github.com/typicode/pkg-ok
   husky
   https://github.com/zeit/git-hooks
+make cert app specific
+  or test that it works in multiple instances - would be nicer
 
 
 
+blessed ui
+  headless mode
+  silent mode
 capture all terminal output and properly log
   logging module?
 fix inquirer ctrl-c behaviour
@@ -30,9 +31,6 @@ add clustering for use of all cpu cores
   https://github.com/Metrological/mas/blob/master/server.js
 add travis + appveyor for windows support
 analytics tracking - in cli and in browser? - cli errors!
-blessed ui
-  headless mode
-  silent mode
 add antenna's on top of boxen to create metro logo
 auto open in chrome tab - autostart app - maf autostart function
   https://github.com/GoogleChrome/puppeteer
