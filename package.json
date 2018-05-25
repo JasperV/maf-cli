@@ -1,6 +1,6 @@
 {
   "name": "maf-cli",
-  "version": "1.5.4",
+  "version": "1.5.5",
   "description": "MAF SDK Command Line Interface",
   "main": "index.js",
   "bin": {
