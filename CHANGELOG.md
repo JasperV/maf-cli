@@ -1,3 +1,14 @@
+<a name="1.5.7"></a>
+## [1.5.7](https://github.com/JasperV/maf-cli/compare/1.5.6...1.5.7) (2018-05-28)
+
+
+### Bug Fixes
+
+* maf3-sdk dependency warning ([ffa6113](https://github.com/JasperV/maf-cli/commit/ffa6113))
+* **installation:** fix path for translations file ([f3bd6bd](https://github.com/JasperV/maf-cli/commit/f3bd6bd))
+
+
+
 <a name="1.5.6"></a>
 ## [1.5.6](https://github.com/JasperV/maf-cli/compare/1.5.5...1.5.6) (2018-05-25)
 
