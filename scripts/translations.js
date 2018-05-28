@@ -10,7 +10,7 @@ module.exports = async function() {
   const res = await fetch( `https://dashboard.metrological.com/locales/en/translation.json` )
 
   return writeFile(
-    path.resolve( process.cwd(), `../maf-cli/lib/resources/translation.json` )
+    path.resolve( process.cwd(), `./node_modules/maf-cli/lib/resources/translation.json` )
   , JSON.stringify( await res.json(), null, 2 )
   )
 }
