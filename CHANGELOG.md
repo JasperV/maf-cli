@@ -1,3 +1,13 @@
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/JasperV/maf-cli/compare/1.5.10...1.6.0) (2018-05-30)
+
+
+### Bug Fixes
+
+* **cli:** allow --version to run without local module ([5ab425a](https://github.com/JasperV/maf-cli/commit/5ab425a))
+
+
+
 <a name="1.5.10"></a>
 ## [1.5.10](https://github.com/JasperV/maf-cli/compare/1.5.9...1.5.10) (2018-05-30)
 
