@@ -1,3 +1,13 @@
+<a name="1.5.8"></a>
+## [1.5.8](https://github.com/JasperV/maf-cli/compare/1.5.7...1.5.8) (2018-05-30)
+
+
+### Bug Fixes
+
+* **server:** fix path off certificate and key ([8fed619](https://github.com/JasperV/maf-cli/commit/8fed619))
+
+
+
 <a name="1.5.7"></a>
 ## [1.5.7](https://github.com/JasperV/maf-cli/compare/1.5.6...1.5.7) (2018-05-28)
 
