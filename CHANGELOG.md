@@ -1,3 +1,13 @@
+<a name="1.5.10"></a>
+## [1.5.10](https://github.com/JasperV/maf-cli/compare/1.5.9...1.5.10) (2018-05-30)
+
+
+### Bug Fixes
+
+* fix require of path ([63748ed](https://github.com/JasperV/maf-cli/commit/63748ed))
+
+
+
 <a name="1.5.8"></a>
 ## [1.5.8](https://github.com/JasperV/maf-cli/compare/1.5.7...1.5.8) (2018-05-30)
 
