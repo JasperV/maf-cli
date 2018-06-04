@@ -19,6 +19,7 @@ add travis + appveyor for windows support
   npm ci
 analytics tracking - in cli and in browser? - cli errors!
 add antenna's on top of boxen to create metro logo
+badges like https://github.com/prettier/prettier
 auto open in chrome tab - autostart app - maf autostart function
   https://github.com/GoogleChrome/puppeteer
   monitor chrome tab for memory usage
