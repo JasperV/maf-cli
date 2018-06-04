@@ -4,13 +4,24 @@ fix double error notice
 fix all TODO's in code
 refactor
 
+source maps
 
+update store api
+  get store preview link (hashed url)
+  It is not 1 API, you need multiple requests to to this.
+  1) Lock store
+  2) Create new app store version
+  3) Publish the newly created version
+  4) Unlock the store.
+
+  We do not have documentation regarding this, but you can check the webinspector to see the api calls which are needed.
 
 blessed ui
   headless mode
   silent mode
 capture all terminal output and properly log
   logging module?
+fix auto-release behaviour / output
 fix inquirer ctrl-c behaviour
   inquirer bottom bar ui progress bar
 add clustering for use of all cpu cores
