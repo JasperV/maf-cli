@@ -69,11 +69,13 @@ This can be used to integrate any other tools you might use, or preprocess certa
 You may also set some environment variables:
 
 ```sh
+LANG=en_US.utf8 # for compatibility reasons, remove if this causes issues for you
+TERM=xterm-256color # for compatibility reasons, remove if this causes issues for you
+NODE_ENV=production # let's make sure we are equal to production as much as possible
+NODE_PORT=8080 # change to your liking
+NODE_SECURE_PORT=8443 # change to your liking
+DOCS_PORT=9090 # change to your liking
 METROLOGICAL_API_KEY="YOUR_API_KEY_HERE" # this is used for publishing your App
-NODE_ENV=production # set to production to mimic the production environment
-NODE_PORT=9090 # you are free to change this
-NODE_SECURE_PORT=9443 # you are free to change this
-DOCS_PORT=8080 # you are free to change this
 ```
 
 
