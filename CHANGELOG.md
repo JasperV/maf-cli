@@ -1,3 +1,27 @@
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/JasperV/maf-cli/compare/1.6.0...1.7.0) (2018-06-04)
+
+
+### Bug Fixes
+
+* **compiler:** fix default es6 code input ([5b893fc](https://github.com/JasperV/maf-cli/commit/5b893fc))
+* **init:** fix identifier in metadata ([581ae4c](https://github.com/JasperV/maf-cli/commit/581ae4c))
+* **init:** fix init params and env params ([8158bf4](https://github.com/JasperV/maf-cli/commit/8158bf4))
+* fix localization casing ([7508a0b](https://github.com/JasperV/maf-cli/commit/7508a0b))
+* **package:** add es6/compiler to package task ([340057c](https://github.com/JasperV/maf-cli/commit/340057c))
+* **server:** do not clear screen when starting ([6e27431](https://github.com/JasperV/maf-cli/commit/6e27431))
+* **server:** fix wrong source order ([7a38ab9](https://github.com/JasperV/maf-cli/commit/7a38ab9))
+* **server:** remove minify html directive ([d8fe721](https://github.com/JasperV/maf-cli/commit/d8fe721))
+* **sync:** fix identifier syncing ([90678f7](https://github.com/JasperV/maf-cli/commit/90678f7))
+
+
+### Features
+
+* **compiler:** add prettier ([3fbd2ee](https://github.com/JasperV/maf-cli/commit/3fbd2ee))
+* **package:** add spinner to package ([860f8a8](https://github.com/JasperV/maf-cli/commit/860f8a8))
+
+
+
 <a name="1.6.0"></a>
 # [1.6.0](https://github.com/JasperV/maf-cli/compare/1.5.10...1.6.0) (2018-05-30)
 
