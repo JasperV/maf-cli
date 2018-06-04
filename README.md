@@ -46,7 +46,7 @@ You can configure the MAF CLI via your .mafrc.js file. It has the following (def
 ```javascript
 {
   language: `nl` // set the default language of the Store and App
-, es6: false // when true all your code will be transpiled (via the Closure Compiler) to ES5 before running and publishing
+, es6: true // when true all your code will be transpiled (via the Closure Compiler) to ES5 before running and publishing
 , autostart: false // when true auto-starts your app when browsing to https://localhost:8443
 }
 ```
