@@ -1,11 +1,9 @@
 test all kinds of apps!!!
 capture ngrok already running error
 fix double error notice
+fix all errors in same format/styling
 fix all TODO's in code
 refactor
-
-notifications via sidebar e.g. growl etc...
-  https://www.npmjs.com/package/node-notifier
 
 update store api
   get store preview link (hashed url)
