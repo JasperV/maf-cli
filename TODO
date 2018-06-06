@@ -4,7 +4,8 @@ fix double error notice
 fix all TODO's in code
 refactor
 
-source maps
+notifications via sidebar e.g. growl etc...
+  https://www.npmjs.com/package/node-notifier
 
 update store api
   get store preview link (hashed url)
@@ -45,9 +46,7 @@ add node api
   with unit tests
 better autocomplete support
   https://github.com/mklabs/tabtab
-runkit examples??? + npm documentation???
-notifications via sidebar e.g. growl etc...
-  https://www.npmjs.com/package/node-notifier
+runkit examples???
 electron version
 
 
