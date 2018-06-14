@@ -48,6 +48,7 @@ You can configure the MAF CLI via your .mafrc.js file. It has the following (def
   language: `nl` // set the default language of the Store and App
 , es6: true // when true all your code will be transpiled (via the Closure Compiler) to ES5 before running and publishing
 , autostart: false // when true auto-starts your app when browsing to https://localhost:8443
+, store: `YOUR/STORE/ID_HERE` // use this when running the store task for example: metrological/nl/external
 }
 ```
 
