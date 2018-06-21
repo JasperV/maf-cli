@@ -3,6 +3,7 @@
 > Development automation for your MAF3 App projects
 
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FJasperV%2Fmaf-cli.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FJasperV%2Fmaf-cli?ref=badge_shield)
 
 [![NPM](https://nodei.co/npm/maf-cli.png?downloads=true&downloadRank=true&stars=true)](https://nodei.co/npm/maf-cli/)
 
@@ -146,3 +147,6 @@ For any questions regarding App developement please use the [Metrological Helpde
 ## ©️ License
 
 MIT
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FJasperV%2Fmaf-cli.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FJasperV%2Fmaf-cli?ref=badge_large)
