@@ -1,33 +1,17 @@
+then from now on, work on dev branch??? or only make proper commits
+
 test all kinds of apps!!!
 capture ngrok already running error
 fix argv/make same format everywhere
 fix double error notice
 fix all errors in same format/styling
+fix all task in same proper structure regarding async, error and done
 fix all TODO's in code
-refactor
-
-update store api
-
-1) Lock store
-2) get store info
-3) Create new app store version
-curl 'https://api.metrological.com/api/developer/app-store/create-new-version' -H 'Pragma: no-cache' -H 'Origin: https://dashboard.metrological.com' -H 'Accept-Encoding: gzip, deflate, br' -H 'Accept-Language: en-US,en;q=0.9' -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTMwNCwidXNlcm5hbWUiOiJKYXNwZXIgREVWIFRlc3QiLCJleHBpcmVzIjoiMjAxOC0wNi0xNVQxMzo1MjowNS4zNDNaIn0._LPT28bIMtZwmH4N5FQrqO4ZGQsBnahSINT5IuvonKk' -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept: application/json, text/plain, */*' -H 'Cache-Control: no-cache' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36' -H 'Connection: keep-alive' -H 'Referer: https://dashboard.metrological.com/' -H 'DNT: 1' --data-binary '{"store":{"operator":"metrological","country":"nl","environment":"external-api-jasper","versions":{"maf":"3.8.3-bc9f37f","plugin":"3.8.3-e678505","hash":"0ce10dfa8a50d368461980a99bf68914"},"settings":{"stats":false},"appSettings":{},"ui":{"com.metrological.ui.MLDemo":{"version":"2.0.4-f55a1a0"}},"categories":[{"name":"favorites","label":{"nl":"favorites","en":"favorites"},"settings":{},"apps":[]},{"name":"recently","label":{"nl":"recently","en":"recently"},"settings":{},"apps":[]},{"name":"test","label":{"nl":"test","en":"test"},"settings":{},"apps":[{"id":"com.jasper.app.test","version":"1.28.0-0ce8cff"}]}],"production":false,"productionStore":"","hidden":false,"includeUnapprovedApps":true,"ipRanges":[],"userAgentRegex":null,"subcategories":false,"customSettings":false,"temp":{}},"unlockId":"c040bd47d2696a56f0875f19f4333310"}' --compressed
-
-4) Publish the newly created version
-curl 'https://api.metrological.com/api/developer/app-store/publish' -H 'Pragma: no-cache' -H 'Origin: https://dashboard.metrological.com' -H 'Accept-Encoding: gzip, deflate, br' -H 'Accept-Language: en-US,en;q=0.9' -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTMwNCwidXNlcm5hbWUiOiJKYXNwZXIgREVWIFRlc3QiLCJleHBpcmVzIjoiMjAxOC0wNi0xNVQxMzo1MjowNS4zNDNaIn0._LPT28bIMtZwmH4N5FQrqO4ZGQsBnahSINT5IuvonKk' -H 'Content-Type: application/json;charset=UTF-8' -H 'Accept: application/json, text/plain, */*' -H 'Cache-Control: no-cache' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36' -H 'Connection: keep-alive' -H 'Referer: https://dashboard.metrological.com/' -H 'DNT: 1' --data-binary '{"unlockId":"c040bd47d2696a56f0875f19f4333310","operator":"metrological","country":"nl","environment":"external-api-jasper","versionHash":"3c4ca314c803023755d2b80ddf5d4868","now":false,"reload":false,"hiddenForClients":false,"publishAsync":true}' --compressed
-
-5) get store preview link (hashed url)
-curl 'https://api.metrological.com/api/developer/app-store/versions?operator=metrological&country=nl&environment=external-api-jasper&size=1' -H 'Pragma: no-cache' -H 'Origin: https://dashboard.metrological.com' -H 'Accept-Encoding: gzip, deflate, br' -H 'Accept-Language: en-US,en;q=0.9' -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/66.0.3359.181 Safari/537.36' -H 'Accept: application/json, text/plain, */*' -H 'Cache-Control: no-cache' -H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTMwNCwidXNlcm5hbWUiOiJKYXNwZXIgREVWIFRlc3QiLCJleHBpcmVzIjoiMjAxOC0wNi0xNVQxMzo1MjowNS4zNDNaIn0._LPT28bIMtZwmH4N5FQrqO4ZGQsBnahSINT5IuvonKk' -H 'Connection: keep-alive' -H 'Referer: https://dashboard.metrological.com/' -H 'DNT: 1' --compressed
-liveVersionHash
-
-6) Unlock the store
-https://api.metrological.com/api/developer/app-store/unlock
--H 'Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6NTY1LCJ1c2VybmFtZSI6Ikphc3BlciBWZXJtZXVsZW4iLCJleHBpcmVzIjoiMjAxOC0wNi0wN1QxMTo1NzozOC41NzNaIn0.yAAM4cUSyCGa12qbbkw_pmw8pgKzgK8CDtvmp0FBeHY'
--H 'Content-Type: application/json;charset=UTF-8'
---data-binary '{"operator":"metrological","country":"nl","environment":"jasper","id":"543e94429cc22afacb9d5e7435ea06ca"}'
+refactor and clean
 
 
 
+fix licensing
 blessed ui
   headless mode
   silent mode
@@ -50,14 +34,13 @@ watch .mafrc and hot reload - connected to browser
 eslint maf-cli
   zeit/git-hooks
   eslint-plugin-unicorn
-publish ook support requests - vragen
-upload ook support requests vragen
 add node api
   also properly update all files with exports and #!bin/node etc...
   with unit tests
 better autocomplete support
   https://github.com/mklabs/tabtab
 runkit examples???
+  - for api only
 electron version
 
 
