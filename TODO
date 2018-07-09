@@ -1,13 +1,13 @@
 test all kinds of apps!!!
 capture ngrok already running error
+fix all TODO's in code
+
+
+refactor and clean
 fix argv/make same format everywhere
 fix double error notice
 fix all errors in same format/styling
 fix all task in same proper structure regarding async, error and done
-fix all TODO's in code
-refactor and clean
-
-
 
 fix licensing
 blessed ui
