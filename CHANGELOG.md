@@ -1,3 +1,18 @@
+<a name="1.7.1"></a>
+## [1.7.1](https://github.com/JasperV/maf-cli/compare/1.7.0...1.7.1) (2018-07-09)
+
+
+### Bug Fixes
+
+* **release:** fix release api call ([978834c](https://github.com/JasperV/maf-cli/commit/978834c))
+
+
+### Features
+
+* add notifier ([1340f74](https://github.com/JasperV/maf-cli/commit/1340f74))
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/JasperV/maf-cli/compare/1.6.0...1.7.0) (2018-06-04)
 
