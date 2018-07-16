@@ -1,3 +1,13 @@
+<a name="1.7.2"></a>
+## [1.7.2](https://github.com/JasperV/maf-cli/compare/1.7.1...1.7.2) (2018-07-16)
+
+
+### Bug Fixes
+
+* **compiler:** inclusion bug ([829aaf5](https://github.com/JasperV/maf-cli/commit/829aaf5))
+
+
+
 <a name="1.7.1"></a>
 ## [1.7.1](https://github.com/JasperV/maf-cli/compare/1.7.0...1.7.1) (2018-07-09)
 
