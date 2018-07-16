@@ -1,6 +1,12 @@
+maf init niet overschrijven
+init package.json
+.env intherit via hoger map
+qa request -> validation request
+
 test all kinds of apps!!!
 capture ngrok already running error
 fix all TODO's in code
+use npm @next for internal versions
 
 
 refactor and clean
