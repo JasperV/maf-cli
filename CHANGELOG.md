@@ -1,3 +1,13 @@
+<a name="1.7.3"></a>
+## [1.7.3](https://github.com/JasperV/maf-cli/compare/1.7.2...1.7.3) (2018-07-16)
+
+
+### Bug Fixes
+
+* **compiler:** remove logs ([ca97876](https://github.com/JasperV/maf-cli/commit/ca97876))
+
+
+
 <a name="1.7.2"></a>
 ## [1.7.2](https://github.com/JasperV/maf-cli/compare/1.7.1...1.7.2) (2018-07-16)
 
